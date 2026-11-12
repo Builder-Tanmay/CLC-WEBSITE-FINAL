@@ -16,6 +16,8 @@ import ToTopButton from './components/common/ToTopButton';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
+import TherapyProgramsPage from './pages/services/TherapyProgramsPage';
+import AreasOfSupportPage from './pages/services/AreasOfSupportPage';
 import HowItWorksPage from './pages/HowItWorksPage';
 import CentresPage from './pages/CentresPage';
 import ReviewsPage from './pages/ReviewsPage';
@@ -36,8 +38,14 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/therapies" element={<ServicesPage />} />
-          <Route path="/services" element={<ServicesPage />} />
+
+          {/* Services & Support Routes */}
+          <Route path="/services" element={<TherapyProgramsPage />} />
+          <Route path="/services/therapies" element={<TherapyProgramsPage />} />
+          <Route path="/services/areas-of-support" element={<AreasOfSupportPage />} />
+          <Route path="/therapies" element={<TherapyProgramsPage />} />
+          <Route path="/areas-of-support" element={<AreasOfSupportPage />} />
+
           <Route path="/how-it-works" element={<HowItWorksPage />} />
           <Route path="/centres" element={<CentresPage />} />
           <Route path="/reviews" element={<ReviewsPage />} />
@@ -54,4 +62,3 @@ export default function App() {
     </Router>
   );
 }
-
