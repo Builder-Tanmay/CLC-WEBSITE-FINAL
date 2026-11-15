@@ -68,6 +68,13 @@ export default function MobileMenu({ isOpen, onClose }) {
             </NavLink>
             <NavLink
               className={({ isActive }) => `mobile-link ${isActive ? 'is-active' : ''}`}
+              to="/parents-corner"
+              onClick={onClose}
+            >
+              Parent's Corner
+            </NavLink>
+            <NavLink
+              className={({ isActive }) => `mobile-link ${isActive ? 'is-active' : ''}`}
               to="/reviews"
               onClick={onClose}
             >
