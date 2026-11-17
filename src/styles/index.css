@@ -1608,4 +1608,234 @@ html.js .steps li.is-active::before { animation: pop 0.5s var(--ease) both; }
     font-size: 0.76rem;
     padding: 10px 12px;
   }
+
+/* ==========================================================================
+   ACETERNITY UI NAVBAR DROPDOWN (Clean, Precise, No Bleed, Crisp Contrast)
+   ========================================================================== */
+.aceternity-nav-item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.aceternity-nav-trigger {
+  color: var(--clc-ink);
+  font-weight: 700;
+  font-size: 0.94rem;
+  line-height: 1.2;
+  padding: 10px 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 9999px;
+  transition: color 0.25s var(--ease), background-color 0.25s var(--ease);
+}
+
+.aceternity-nav-trigger:hover,
+.aceternity-nav-trigger.is-active {
+  color: var(--clc-red);
+}
+
+.aceternity-chevron {
+  font-size: 0.72rem;
+  transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: inline-block;
+}
+
+.aceternity-chevron.is-flipped {
+  transform: rotate(180deg);
+  color: var(--clc-red);
+}
+
+/* Invisible Hover Safety Bridge to eliminate mouse gap between trigger and menu */
+.aceternity-hover-bridge {
+  position: absolute;
+  top: 100%;
+  left: -20px;
+  right: -20px;
+  height: 16px;
+  z-index: 1045;
+  pointer-events: auto;
+}
+
+/* Floating Card Container: Spring physics, proper centering, no horizontal overflow */
+.aceternity-dropdown-panel {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(8px) scale(0.96);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 1050;
+  width: 410px;
+  max-width: 92vw;
+  transition: opacity 0.24s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.24s;
+  will-change: transform, opacity;
+}
+
+.aceternity-dropdown-panel.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0) scale(1);
+}
+
+/* Solid Opaque Background: Prevents background text from showing through */
+.aceternity-dropdown-card {
+  background: #ffffff !important;
+  border: 1px solid var(--clc-line);
+  border-radius: 20px;
+  box-shadow: 0 20px 45px -10px rgba(15, 23, 42, 0.22),
+              0 0 0 1px rgba(229, 106, 85, 0.08);
+  overflow: hidden;
+}
+
+/* Dropdown interactive link cards */
+.aceternity-dropdown-item {
+  text-decoration: none;
+  background: #ffffff;
+  border: 1px solid transparent;
+  transition: all 0.22s var(--ease);
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.aceternity-dropdown-item:hover {
+  background: #FFF5F5 !important;
+  border-color: rgba(229, 106, 85, 0.25) !important;
+  transform: translateX(4px);
+}
+
+.aceternity-dropdown-item.is-current {
+  background: #FFF5F5;
+  border-color: rgba(229, 106, 85, 0.35);
+}
+
+.aceternity-dropdown-item .item-title {
+  color: var(--clc-navy) !important;
+  font-size: 0.96rem;
+  letter-spacing: -0.01em;
+  transition: color 0.2s;
+}
+
+.aceternity-dropdown-item:hover .item-title {
+  color: var(--clc-red-dark) !important;
+}
+
+.aceternity-dropdown-item .item-desc {
+  color: var(--clc-muted) !important;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  margin-top: 3px;
+}
+
+.item-arrow {
+  font-size: 0.88rem;
+  color: #94A3B8 !important;
+  transition: transform 0.22s var(--ease), color 0.22s var(--ease);
+}
+
+.aceternity-dropdown-item:hover .item-arrow {
+  color: var(--clc-red) !important;
+  transform: translateX(4px);
+}
+
+/* Icon Box Badges */
+.aceternity-icon-box {
+  width: 44px;
+  height: 44px;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  border-radius: 12px;
+  transition: transform 0.22s var(--ease);
+}
+
+.aceternity-dropdown-item:hover .aceternity-icon-box {
+  transform: scale(1.08);
+}
+
+.bg-rose-tint {
+  background-color: #FEE2E2 !important;
+}
+.text-rose {
+  color: #DC2626 !important;
+}
+
+.bg-teal-tint {
+  background-color: #CCFBF1 !important;
+}
+.text-teal {
+  color: #0F766E !important;
+}
+
+.text-navy {
+  color: var(--clc-navy) !important;
+}
+
+.aceternity-divider {
+  height: 1px;
+  background: #E2E8F0;
+  margin: 6px 4px;
+}
+
+.aceternity-dropdown-footer {
+  border-top: 1px solid #E2E8F0;
+}
+
+.text-xs {
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+/* Areas of Support Page Styling */
+.sticky-top-subnav {
+  position: sticky;
+  top: var(--header-h);
+  z-index: 1020;
+  background-color: rgba(250, 249, 246, 0.96) !important;
+  backdrop-filter: blur(8px);
+}
+
+.hover-lift {
+  transition: transform 0.28s var(--ease), box-shadow 0.28s var(--ease), border-color 0.28s;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 32px -6px rgba(15, 23, 42, 0.1) !important;
+  border-color: rgba(211, 47, 47, 0.35);
+}
+
+.transition-scale {
+  transition: transform 0.4s var(--ease);
+}
+
+.hover-lift:hover .transition-scale {
+  transform: scale(1.03);
+}
+
+.letter-spacing-1 {
+  letter-spacing: 0.05em;
+}
+
+/* Mobile Submenu Styling */
+.mobile-dropdown-group {
+  background: #F8FAFC;
+}
+
+.mobile-sublink {
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.mobile-sublink:hover,
+.mobile-sublink.is-active {
+  background-color: #ffffff;
+  color: var(--clc-red) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
