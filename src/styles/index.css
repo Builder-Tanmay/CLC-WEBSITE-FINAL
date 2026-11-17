@@ -1608,6 +1608,7 @@ html.js .steps li.is-active::before { animation: pop 0.5s var(--ease) both; }
     font-size: 0.76rem;
     padding: 10px 12px;
   }
+}
 
 /* ==========================================================================
    ACETERNITY UI NAVBAR DROPDOWN (Clean, Precise, No Bleed, Crisp Contrast)
