@@ -1,4 +1,4 @@
-﻿/* ==========================================================
+/* ==========================================================
    Child Learning Centre (CLC) - site styles
    Bootstrap 5.3 base. Brand: CLC red + navy on warm off-white.
    Type: Fraunces (warm serif headings) + Nunito Sans (body).
@@ -957,4 +957,655 @@ html.js .steps li.is-active::before { animation: pop 0.5s var(--ease) both; }
   .shape, .float-badge, .marquee__track, .rotator, .scroll-cue, .video-thumb__play::before { animation: none !important; }
   .hero h1 .hl::after { animation: none; transform: scaleX(1); }
   .btn-clc:hover::after { animation: none; }
+}
+
+/* =========================================
+   CENTRES PAGE ENHANCEMENTS
+========================================= */
+
+.centres-page {
+  background: var(--clc-cream);
+}
+
+/* Hero */
+
+.centres-hero {
+  background: #fff;
+  padding: 65px 0 55px;
+}
+
+.centres-hero__content {
+  max-width: 850px;
+}
+
+.centres-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--clc-red);
+  background: var(--clc-red-tint);
+  padding: 9px 16px;
+  border-radius: 30px;
+  font-size: 0.88rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.centres-hero h1 {
+  color: var(--clc-navy);
+  font-family: var(--font-head);
+  font-size: clamp(2.2rem, 4vw, 3.3rem);
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+.centres-hero h1 span {
+  color: var(--clc-red);
+}
+
+.centres-hero__description {
+  color: var(--clc-muted);
+  font-size: 1.08rem;
+  line-height: 1.8;
+  max-width: 720px;
+  margin-bottom: 30px;
+}
+
+.centres-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  padding-top: 22px;
+  border-top: 1px solid var(--clc-line);
+}
+
+.centres-highlight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.centres-highlight>i {
+  width: 44px;
+  height: 44px;
+  border-radius: 13px;
+  display: grid;
+  place-items: center;
+  color: var(--clc-red);
+  background: var(--clc-red-tint);
+  font-size: 1.2rem;
+}
+
+.centres-highlight div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.centres-highlight strong {
+  color: var(--clc-navy);
+  font-size: 1rem;
+}
+
+.centres-highlight span {
+  color: var(--clc-muted);
+  font-size: 0.82rem;
+}
+
+/* Directory */
+
+.centres-directory {
+  padding-top: 65px;
+  padding-bottom: 75px;
+}
+
+.centres-section-heading {
+  margin-bottom: 28px;
+}
+
+.centres-section-kicker {
+  color: var(--clc-red);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.centres-section-heading h2 {
+  color: var(--clc-navy);
+  font-family: var(--font-head);
+  font-size: 2.2rem;
+  margin: 8px 0;
+}
+
+.centres-section-heading p {
+  color: var(--clc-muted);
+  margin-bottom: 0;
+}
+
+/* Filters */
+
+.centres-filter-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.centres-filter-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.centres-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 19px;
+  border: 1px solid var(--clc-line);
+  border-radius: 30px;
+  background: #fff;
+  color: var(--clc-navy);
+  font-weight: 700;
+  font-size: 0.92rem;
+  transition: all 0.25s ease;
+}
+
+.centres-filter-btn:hover {
+  border-color: var(--clc-red);
+  color: var(--clc-red);
+  transform: translateY(-2px);
+}
+
+.centres-filter-btn.active {
+  background: var(--clc-navy);
+  color: #fff;
+  border-color: var(--clc-navy);
+}
+
+.filter-count {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 2px 7px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+}
+
+.centres-result-count {
+  color: var(--clc-muted);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.centres-result-count strong {
+  color: var(--clc-navy);
+}
+
+/* Centre Cards */
+
+.centre-card__content {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  background: #fff;
+  border: 1px solid var(--clc-line);
+  border-radius: 19px;
+  box-shadow: 0 5px 20px rgba(15, 23, 42, 0.035);
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.centre-card__content:hover {
+  transform: translateY(-6px);
+  border-color: rgba(211, 47, 47, 0.35);
+  box-shadow: 0 16px 35px rgba(15, 23, 42, 0.09);
+}
+
+.centre-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.centre-card__location {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--clc-muted);
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.centre-card__location i {
+  color: var(--clc-red);
+}
+
+.centre-card__badge {
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: var(--clc-red-tint);
+  color: var(--clc-red);
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.centre-card__content h3 {
+  color: var(--clc-navy);
+  font-family: var(--font-head);
+  font-size: 1.35rem;
+  line-height: 1.35;
+  margin-bottom: 17px;
+}
+
+.centre-card__address {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  min-height: 65px;
+}
+
+.centre-card__address i {
+  color: var(--clc-red);
+  font-size: 1.05rem;
+  margin-top: 3px;
+}
+
+.centre-card__address p {
+  color: var(--clc-muted);
+  font-size: 0.92rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.centre-card__timing {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  padding: 15px 0;
+  margin-top: 12px;
+  border-top: 1px solid var(--clc-line);
+  border-bottom: 1px solid var(--clc-line);
+}
+
+.centre-card__timing>i {
+  color: var(--clc-red);
+  font-size: 1.05rem;
+  margin-top: 2px;
+}
+
+.centre-card__timing div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.centre-card__timing span {
+  color: var(--clc-muted);
+  font-size: 0.78rem;
+}
+
+.centre-card__timing strong {
+  color: var(--clc-navy);
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+/* Card Actions */
+
+.centre-card__actions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 18px;
+}
+
+.centre-card__actions .btn {
+  flex: 1;
+  min-width: 0;
+  border-radius: 30px;
+  padding: 11px 10px;
+  font-weight: 800;
+  font-size: 0.88rem;
+  transition: all 0.25s ease;
+}
+
+.centres-directions-btn {
+  color: var(--clc-navy);
+  background: #fff;
+  border: 1px solid var(--clc-field);
+}
+
+.centres-directions-btn:hover {
+  color: var(--clc-red);
+  border-color: var(--clc-red);
+  background: var(--clc-red-tint);
+}
+
+.centres-call-btn {
+  color: #fff;
+  background: var(--clc-red);
+  border: 1px solid var(--clc-red);
+}
+
+.centres-call-btn:hover {
+  color: #fff;
+  background: var(--clc-red-dark);
+  border-color: var(--clc-red-dark);
+}
+
+/* Contact CTA */
+
+.centres-contact-section {
+  padding: 0 0 75px;
+  background: var(--clc-cream);
+}
+
+.centres-contact {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 35px;
+  border: 1px solid var(--clc-line);
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.045);
+}
+
+.centres-contact__icon {
+  flex-shrink: 0;
+  width: 65px;
+  height: 65px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background: var(--clc-red-tint);
+  color: var(--clc-red);
+  font-size: 1.8rem;
+}
+
+.centres-contact__content {
+  flex: 1;
+}
+
+.centres-contact__content>span {
+  color: var(--clc-red);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+.centres-contact__content h2 {
+  color: var(--clc-navy);
+  font-family: var(--font-head);
+  font-size: 1.65rem;
+  margin: 7px 0;
+}
+
+.centres-contact__content p {
+  color: var(--clc-muted);
+  line-height: 1.7;
+  margin: 0;
+  font-size: 0.92rem;
+}
+
+.centres-contact__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+  min-width: 205px;
+}
+
+.centres-contact__actions .btn {
+  border-radius: 30px;
+  padding: 11px 16px;
+  font-weight: 800;
+}
+
+.centres-whatsapp-btn {
+  color: #fff;
+  background: #25D366;
+  border: 1px solid #25D366;
+}
+
+.centres-whatsapp-btn:hover {
+  color: #fff;
+  background: #1DA851;
+  border-color: #1DA851;
+}
+
+.centres-contact__phone {
+  text-align: center;
+  color: var(--clc-navy);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+.centres-contact__phone:hover {
+  color: var(--clc-red);
+}
+
+/* Responsive */
+
+@media (max-width: 991.98px) {
+  .centres-contact {
+    flex-wrap: wrap;
+  }
+
+  .centres-contact__content {
+    flex-basis: calc(100% - 95px);
+  }
+
+  .centres-contact__actions {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .centres-contact__actions .btn {
+    flex: 1;
+  }
+
+  .centres-contact__phone {
+    flex-basis: 100%;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .centres-hero {
+    padding: 42px 0;
+  }
+
+  .centres-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .centres-hero__description {
+    font-size: 0.98rem;
+  }
+
+  .centres-highlights {
+    gap: 17px;
+  }
+
+  .centres-highlight {
+    flex-basis: calc(50% - 10px);
+  }
+
+  .centres-directory {
+    padding-top: 45px;
+    padding-bottom: 50px;
+  }
+
+  .centres-filter-list {
+    width: 100%;
+  }
+
+  .centres-filter-btn {
+    font-size: 0.82rem;
+    padding: 9px 13px;
+  }
+
+  .centres-contact {
+    padding: 23px;
+    gap: 15px;
+  }
+
+  .centres-contact__icon {
+    width: 52px;
+    height: 52px;
+    font-size: 1.45rem;
+  }
+
+  .centres-contact__content {
+    flex-basis: 100%;
+  }
+
+  .centres-contact__content h2 {
+    font-size: 1.4rem;
+  }
+
+  .centres-contact__actions {
+    flex-direction: column;
+  }
+
+  .centre-card__content {
+    padding: 21px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .centre-card__content,
+  .centres-filter-btn,
+  .centre-card__actions .btn {
+    transition: none;
+  }
+
+  .centre-card__content:hover,
+  .centres-filter-btn:hover {
+    transform: none;
+  }
+}
+
+/* =========================================
+   CENTRES PAGE - RELIABLE SCROLL REVEAL
+========================================= */
+
+/* Keep content visible by default.
+   This also acts as the fallback if JS or
+   IntersectionObserver is unavailable. */
+
+.centres-page [data-reveal] {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.8s var(--ease),
+    transform 0.8s var(--ease);
+  transition-delay: var(--d, 0ms);
+}
+
+/* Hide content only after the observer
+   has been initialized successfully. */
+
+.centres-page.reveal-ready [data-reveal]:not(.is-visible) {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+}
+
+/* Reveal content when it enters the viewport. */
+
+.centres-page.reveal-ready [data-reveal].is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Accessibility: disable reveal movement
+   when reduced motion is preferred. */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .centres-page [data-reveal],
+  .centres-page.reveal-ready [data-reveal]:not(.is-visible) {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* =========================================
+   CENTRES HERO - IMAGE ENHANCEMENT
+========================================= */
+
+.centres-hero__layout {
+  row-gap: 35px;
+}
+
+.centres-hero__content {
+  max-width: 100%;
+}
+
+.centres-hero__visual {
+  position: relative;
+  padding: 10px;
+}
+
+.centres-hero__image {
+  display: block;
+  width: 100%;
+  height: 390px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 22px 22px 22px 65px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+}
+
+.centres-hero__image-note {
+  position: absolute;
+  left: -5px;
+  bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 13px 17px;
+  border-radius: 12px;
+  background: #fff;
+  color: var(--clc-navy);
+  font-size: 0.85rem;
+  font-weight: 800;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.12);
+}
+
+.centres-hero__image-note i {
+  color: var(--clc-red);
+}
+
+@media (max-width: 991.98px) {
+  .centres-hero__visual {
+    max-width: 600px;
+    margin: 10px auto 0;
+  }
+
+  .centres-hero__image {
+    height: 350px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .centres-hero__image {
+    height: 270px;
+    border-radius: 18px 18px 18px 42px;
+  }
+
+  .centres-hero__image-note {
+    left: 0;
+    bottom: 20px;
+    font-size: 0.76rem;
+    padding: 10px 12px;
+  }
 }

@@ -64,6 +64,12 @@ export default function Header() {
               Centres
             </NavLink>
             <NavLink
+              to="/parents-corner"
+              className={({ isActive }) => (isActive ? 'is-active' : '')}
+            >
+              Parent's Corner
+            </NavLink>
+            <NavLink
               to="/reviews"
               className={({ isActive }) => (isActive ? 'is-active' : '')}
             >
