@@ -399,92 +399,1258 @@ html.js .steps li.is-active::before { animation: pop 0.5s var(--ease) both; }
 .review-col[data-reveal]:not(.is-visible) .review__stars i { opacity: 0; }
 
 /* ---------- Contact / enquiry ---------- */
-.contact-list { list-style: none; margin: 1.4rem 0 0; padding: 0; }
-.contact-list li { display: flex; gap: 14px; margin-bottom: 1rem; align-items: center; }
-.contact-list .ico {
-  flex: 0 0 44px; height: 44px; border-radius: 12px; background: var(--clc-red-tint); color: var(--clc-red);
-  display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
-}
-.contact-list strong { display: block; color: var(--clc-navy); line-height: 1.3; }
-.contact-list a, .contact-list span.v { color: var(--clc-muted); text-decoration: none; }
-.contact-list a:hover { color: var(--clc-red); text-decoration: underline; }
-.form-card {
-  background: var(--clc-cream); border: 1px solid var(--clc-line); border-radius: 18px;
-  padding: clamp(1.1rem, 2.6vw, 1.6rem);
-}
-.form-card h3 { font-size: 1.3rem; margin-bottom: 0.2rem; }
-.form-lead { color: var(--clc-muted); margin-bottom: 1rem; font-size: 0.92rem; line-height: 1.5; }
 
-.enquiry__grid { display: grid; grid-template-columns: 1fr; gap: 0.8rem 0.9rem; }
-@media (min-width: 576px) { .enquiry__grid { grid-template-columns: 1fr 1fr; } }
-.field { margin: 0; padding: 0; border: 0; min-width: 0; }
-.field--full { grid-column: 1 / -1; }
-.field > label, .field > legend {
-  display: block; float: none; width: auto; padding: 0;
-  font-family: var(--font-body); font-weight: 700; font-size: 0.88rem; line-height: 1.3; color: var(--clc-navy); margin-bottom: 0.3rem;
-}
-.field .opt { font-weight: 600; color: var(--clc-muted); font-size: 0.82rem; }
-.field input[type="text"], .field input[type="tel"], .field select, .field textarea {
-  width: 100%; min-height: 44px; padding: 0.5rem 0.8rem; font: inherit; font-size: 0.95rem; line-height: 1.4; color: var(--clc-ink);
-  background: #fff; border: 1.5px solid var(--clc-field); border-radius: 10px;
-  transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
-}
-.field textarea { min-height: 64px; height: 64px; resize: vertical; }
-.field input:hover, .field select:hover, .field textarea:hover { border-color: #B3AB9A; }
-.field input:focus, .field select:focus, .field textarea:focus {
-  outline: 0; border-color: var(--clc-red); box-shadow: 0 0 0 4px rgba(211, 47, 47, 0.15);
-}
-.field.has-error input, .field.has-error select { border-color: #C62828; background: #FFF8F8; }
-.field.is-valid input, .field.is-valid select { border-color: var(--clc-ok); }
-.field__err { margin: 0.3rem 0 0; font-size: 0.83rem; line-height: 1.35; font-weight: 600; color: #B71C1C; display: none; }
-.field.has-error .field__err { display: block; animation: rise 0.35s var(--ease) both; }
-.field__hint { margin: 0.4rem 0 0; font-size: 0.88rem; color: var(--clc-muted); }
-.field__count { float: right; font-size: 0.78rem; color: var(--clc-muted); font-weight: 600; }
-.phone-wrap { position: relative; }
-.phone-wrap .prefix {
-  position: absolute; left: 1px; top: 1px; bottom: 1px; display: flex; align-items: center; padding: 0 0.7rem;
-  background: #F3F0E9; border-radius: 9px 0 0 9px; font-size: 0.9rem; font-weight: 700; color: var(--clc-muted); border-right: 1px solid var(--clc-field);
-}
-.phone-wrap input { padding-left: 3.7rem !important; }
+/* =========================================
+   CLC CONTACT PAGE - LAYOUT ONLY
+   Uses existing CLC brand colours
+========================================= */
 
-.chips { display: flex; flex-wrap: wrap; gap: 6px; }
-.chip { position: relative; display: inline-flex; margin: 0; }
-.chip input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; z-index: 1; }
-.chip span {
-  display: inline-flex; align-items: center; gap: 5px; padding: 0.38rem 0.85rem; border: 1.5px solid var(--clc-field);
-  border-radius: 999px; background: #fff; font-weight: 700; font-size: 0.86rem; line-height: 1.3; color: var(--clc-ink);
-  transition: background 0.25s, border-color 0.25s, color 0.25s, transform 0.3s var(--ease);
+.contact-page {
+  background: var(--clc-cream);
+  color: var(--clc-ink);
+  overflow: hidden;
 }
-.chip:hover span { border-color: var(--clc-red); }
-.chip input:checked + span { background: var(--clc-red-tint); border-color: var(--clc-red); color: var(--clc-red-dark); }
-.chip input[type="checkbox"]:checked + span::before { content: '\F26E'; font-family: 'bootstrap-icons'; font-size: 0.95rem; animation: pop 0.35s var(--ease) both; }
-.chip input:active + span { transform: scale(0.96); }
-.chip input:focus-visible + span { outline: 3px solid var(--clc-focus); outline-offset: 2px; }
-.field.has-error .chips .chip span { border-color: #E57373; }
 
-.enquiry__submit { margin-top: 1rem; }
-.enquiry__submit .btn { width: 100%; min-height: 46px; font-size: 0.98rem; }
-.enquiry__note { margin: 0.6rem 0 0; font-size: 0.8rem; line-height: 1.4; color: var(--clc-muted); text-align: center; }
-.btn__spin {
-  position: absolute; width: 22px; height: 22px; border-radius: 50%;
-  border: 3px solid rgba(255, 255, 255, 0.45); border-top-color: #fff; opacity: 0; animation: spin 0.7s linear infinite;
+.contact-page a {
+  text-decoration: none;
 }
-.btn.is-loading { pointer-events: none; }
-.btn.is-loading .btn__label { opacity: 0; }
-.btn.is-loading .btn__spin { opacity: 1; }
 
-.enquiry-done { text-align: center; padding: 1.2rem 0.4rem 0.4rem; }
-.enquiry-done:focus { outline: 0; }
-.enquiry-done svg { width: 64px; height: 64px; margin-bottom: 0.8rem; }
-.enquiry-done circle, .enquiry-done path {
-  fill: none; stroke: var(--clc-ok); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round;
-  stroke-dasharray: 200; stroke-dashoffset: 200; animation: draw 0.8s var(--ease) 0.1s forwards;
+/* HERO SECTION */
+
+.contact-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(4rem, 8vw, 6.5rem) 0;
+  background: var(--clc-navy);
+  color: #fff;
 }
-.enquiry-done path { stroke-dasharray: 60; stroke-dashoffset: 60; animation-delay: 0.6s; animation-duration: 0.5s; }
-.enquiry-done h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
-.enquiry-done p { color: var(--clc-muted); font-size: 0.95rem; max-width: 28rem; margin: 0 auto 1rem; }
-.enquiry-done .btns { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
-.enquiry-done .again { margin-top: 1.1rem; }
+
+.contact-hero::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 420px;
+  height: 420px;
+  right: -150px;
+  top: -220px;
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: 50%;
+}
+
+.contact-hero::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 300px;
+  height: 300px;
+  right: 80px;
+  bottom: -220px;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 50%;
+}
+
+.contact-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 22px;
+  color: #FFD2CF;
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.contact-tag i {
+  color: var(--clc-red);
+  font-size: 1.1rem;
+}
+
+.contact-hero h1 {
+  max-width: 680px;
+  margin-bottom: 22px;
+  color: #fff;
+  font-family: var(--font-head);
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  font-weight: 600;
+  line-height: 1.12;
+}
+
+.contact-hero h1 span {
+  color: #FFD2CF;
+}
+
+.contact-hero-text {
+  max-width: 560px;
+  margin-bottom: 30px;
+  color: #E3E8F1;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.contact-hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.contact-hero-actions .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-call-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+}
+
+.contact-call-link:hover {
+  color: #FFD2CF;
+}
+
+.call-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255,255,255,.35);
+  border-radius: 50%;
+}
+
+.contact-call-link small,
+.contact-call-link strong {
+  display: block;
+}
+
+.contact-call-link small {
+  color: #B6C0D2;
+  font-size: .78rem;
+}
+
+.contact-call-link strong {
+  font-size: .95rem;
+}
+
+/* HERO INFORMATION CARD */
+
+.contact-hero-card {
+  position: relative;
+  max-width: 390px;
+  margin-left: auto;
+  padding: 38px 32px 28px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--clc-line);
+  border-radius: 18px;
+  box-shadow: 0 25px 55px rgba(0,0,0,.2);
+}
+
+.hero-card-decoration {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  color: var(--clc-red-tint);
+  font-size: 90px;
+}
+
+.hero-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  margin-bottom: 25px;
+  border-radius: 14px;
+  background: var(--clc-red-tint);
+  color: var(--clc-red);
+  font-size: 26px;
+}
+
+.hero-card-label {
+  color: var(--clc-red);
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+.contact-hero-card h2 {
+  margin: 12px 0;
+  color: var(--clc-navy);
+  font-family: var(--font-head);
+  font-size: 1.9rem;
+}
+
+.contact-hero-card > p {
+  color: var(--clc-muted);
+  font-size: .95rem;
+  line-height: 1.8;
+}
+
+.hero-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding-top: 17px;
+  border-top: 1px solid var(--clc-line);
+  color: var(--clc-ink);
+  font-size: .82rem;
+  font-weight: 700;
+}
+
+.hero-card-footer i {
+  color: var(--clc-red);
+}
+
+/* QUICK CONTACT CARDS */
+
+.contact-quick {
+  position: relative;
+  z-index: 2;
+  margin-top: -32px;
+}
+
+.quick-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  height: 100%;
+  min-height: 100px;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid var(--clc-line);
+  border-radius: 14px;
+  color: var(--clc-ink);
+  box-shadow: 0 8px 25px rgba(15,23,42,.06);
+  transition: transform .3s var(--ease),
+              box-shadow .3s var(--ease);
+}
+
+.quick-card:hover {
+  color: var(--clc-ink);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(15,23,42,.1);
+}
+
+.quick-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--clc-red-tint);
+  color: var(--clc-red);
+  font-size: 21px;
+}
+
+.quick-content {
+  min-width: 0;
+}
+
+.quick-content span,
+.quick-content strong {
+  display: block;
+}
+
+.quick-content span {
+  margin-bottom: 5px;
+  color: var(--clc-muted);
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.quick-content strong {
+  color: var(--clc-navy);
+  font-size: .9rem;
+  font-weight: 800;
+}
+
+.quick-arrow {
+  margin-left: auto;
+  color: var(--clc-muted);
+}
+
+/* APPOINTMENT SECTION */
+
+.contact-booking {
+  padding: clamp(4rem, 7vw, 6rem) 0;
+}
+
+.contact-section-heading {
+  max-width: 680px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.contact-eyebrow {
+  display: inline-block;
+  color: var(--clc-red);
+  font-size: .73rem;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
+
+.contact-section-heading h2 {
+  margin: 13px 0;
+  color: var(--clc-navy);
+  font-family: var(--font-head);
+  font-size: clamp(1.9rem, 3.5vw, 2.7rem);
+  font-weight: 600;
+}
+
+.contact-section-heading p {
+  margin: 0;
+  color: var(--clc-muted);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* LEFT INFORMATION PANEL */
+
+.booking-aside {
+  height: 100%;
+  padding: 35px 28px;
+  background: var(--clc-navy);
+  border-radius: 16px;
+  color: #fff;
+}
+
+.aside-label {
+  color: #FFD2CF;
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
+
+.booking-aside h3 {
+  margin: 17px 0;
+  color: #fff;
+  font-family: var(--font-head);
+  font-size: 1.8rem;
+  line-height: 1.35;
+}
+
+.aside-description {
+  margin-bottom: 30px;
+  color: #B6C0D2;
+  font-size: .94rem;
+  line-height: 1.8;
+}
+
+.booking-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.booking-benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+}
+
+.benefit-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 11px;
+  background: rgba(255,255,255,.1);
+  color: #FFD2CF;
+  font-size: 19px;
+}
+
+.booking-benefit strong {
+  display: block;
+  margin: 2px 0 5px;
+  color: #fff;
+  font-size: .92rem;
+}
+
+.booking-benefit p {
+  margin: 0;
+  color: #B6C0D2;
+  font-size: .83rem;
+  line-height: 1.6;
+}
+
+.booking-aside-note {
+  display: flex;
+  gap: 12px;
+  margin-top: 32px;
+  padding: 17px;
+  background: rgba(255,255,255,.08);
+  border-radius: 11px;
+}
+
+.booking-aside-note > i {
+  color: #FFD2CF;
+  font-size: 22px;
+}
+
+.booking-aside-note p {
+  margin: 0;
+  color: #E3E8F1;
+  font-family: var(--font-head);
+  font-size: .9rem;
+  font-style: italic;
+  line-height: 1.7;
+}
+
+/* FORM PANEL */
+
+.contact-form-panel {
+  height: 100%;
+  padding: clamp(20px, 3vw, 35px);
+  background: #fff;
+  border: 1px solid var(--clc-line);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(15,23,42,.05);
+}
+
+.contact-form-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 25px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--clc-line);
+}
+
+.contact-form-top h3 {
+  margin: 9px 0 5px;
+  color: var(--clc-navy);
+  font-family: var(--font-head);
+  font-size: 1.65rem;
+}
+
+.contact-form-top p {
+  margin: 0;
+  color: var(--clc-muted);
+  font-size: .9rem;
+}
+
+.form-top-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: var(--clc-red-tint);
+  color: var(--clc-red);
+  font-size: 23px;
+}
+
+/* Preserve the existing .form-card styling.
+   Do not override its background, padding or border. */
+
+/* LOCATION SECTION */
+
+.contact-location {
+  padding: 0 0 80px;
+}
+
+.location-card {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 30px;
+  background: #fff;
+  border: 1px solid var(--clc-line);
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(15,23,42,.04);
+}
+
+.location-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 58px;
+  height: 58px;
+  border-radius: 14px;
+  background: var(--clc-red-tint);
+  color: var(--clc-red);
+  font-size: 25px;
+}
+
+.location-content {
+  flex: 1;
+}
+
+.location-content h3 {
+  margin: 7px 0;
+  color: var(--clc-navy);
+  font-family: var(--font-head);
+  font-size: 1.5rem;
+}
+
+.location-content p {
+  max-width: 650px;
+  margin: 0;
+  color: var(--clc-muted);
+  font-size: .9rem;
+  line-height: 1.7;
+}
+
+.location-card .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  gap: 9px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 991px) {
+  .contact-hero {
+    padding: 70px 0;
+  }
+
+  .contact-hero-card {
+    max-width: 100%;
+    margin: 10px 0 0;
+  }
+
+  .booking-aside {
+    height: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .contact-hero {
+    padding: 60px 0 70px;
+  }
+
+  .contact-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .contact-hero-text {
+    font-size: .95rem;
+  }
+
+  .contact-hero-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .contact-quick {
+    margin-top: -20px;
+  }
+
+  .quick-card {
+    min-height: 85px;
+  }
+
+  .contact-booking {
+    padding: 65px 0;
+  }
+
+  .contact-section-heading {
+    margin-bottom: 32px;
+  }
+
+  .booking-aside {
+    padding: 28px 23px;
+  }
+
+  .contact-form-panel {
+    padding: 22px 18px;
+  }
+
+  .location-card {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 25px 22px;
+  }
+
+  .location-card .btn {
+    width: 100%;
+  }
+
+  .contact-location {
+    padding-bottom: 55px;
+  }
+}
+
+@media (max-width: 400px) {
+  .contact-hero h1 {
+    font-size: 2.15rem;
+  }
+
+  .contact-form-top h3 {
+    font-size: 1.35rem;
+  }
+}
+
+
+
+/* =========================================
+   CLC BOOKING FORM - CONTACT PAGE
+========================================= */
+
+.contact-page .enquiry-wrap {
+  width: 100%;
+}
+
+.contact-page .form-lead {
+  color: var(--clc-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1.8rem;
+}
+
+.contact-page .enquiry {
+  width: 100%;
+}
+
+.contact-page .enquiry__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.35rem 1.25rem;
+}
+
+.contact-page .field {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.contact-page .field label,
+.contact-page .field legend {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.55rem;
+  color: var(--clc-navy);
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.contact-page .field .opt {
+  color: var(--clc-muted);
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.contact-page .field input:not([type="checkbox"]),
+.contact-page .field select,
+.contact-page .field textarea {
+  display: block;
+  width: 100%;
+  min-height: 51px;
+  padding: 0.8rem 0.95rem;
+  border: 1px solid var(--clc-field);
+  border-radius: 10px;
+  outline: none;
+  background: #fff;
+  color: var(--clc-ink);
+  font-family: var(--font-body);
+  font-size: 0.94rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-page .field input::placeholder,
+.contact-page .field textarea::placeholder {
+  color: #9299a7;
+  opacity: 1;
+}
+
+.contact-page .field input:focus,
+.contact-page .field select:focus,
+.contact-page .field textarea:focus {
+  border-color: var(--clc-focus);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.contact-page .field select {
+  cursor: pointer;
+}
+
+.contact-page .field textarea {
+  min-height: 125px;
+  resize: vertical;
+}
+
+.contact-page .field--full {
+  grid-column: 1 / -1;
+}
+
+.contact-page .phone-wrap {
+  display: flex;
+  align-items: center;
+  min-height: 51px;
+  overflow: hidden;
+  border: 1px solid var(--clc-field);
+  border-radius: 10px;
+  background: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-page .phone-wrap:focus-within {
+  border-color: var(--clc-focus);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.contact-page .phone-wrap .prefix {
+  padding: 0 0.9rem;
+  border-right: 1px solid var(--clc-line);
+  color: var(--clc-muted);
+  font-weight: 800;
+}
+
+.contact-page .phone-wrap input {
+  flex: 1;
+  min-width: 0;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.contact-page .field__count {
+  float: right;
+  color: var(--clc-muted);
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.contact-page .chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 0.75rem;
+}
+
+.contact-page .chip {
+  position: relative;
+  display: inline-flex !important;
+  align-items: center;
+  width: auto !important;
+  margin: 0 !important;
+  cursor: pointer;
+}
+
+.contact-page .chip input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.contact-page .chip span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 39px;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid var(--clc-line);
+  border-radius: 50px;
+  background: #fff;
+  color: var(--clc-ink);
+  font-size: 0.84rem;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.contact-page .chip:hover span {
+  border-color: var(--clc-red);
+  color: var(--clc-red);
+}
+
+.contact-page .chip input:checked + span {
+  border-color: var(--clc-red);
+  background: var(--clc-red-tint);
+  color: var(--clc-red-dark);
+}
+
+.contact-page .chip input:focus-visible + span {
+  outline: 3px solid rgba(37, 99, 235, 0.2);
+  outline-offset: 2px;
+}
+
+.contact-page .field__err {
+  margin: 0.45rem 0 0;
+  color: #c62828;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.contact-page .field.has-error input:not([type="checkbox"]),
+.contact-page .field.has-error select,
+.contact-page .field.has-error .phone-wrap {
+  border-color: #d32f2f;
+}
+
+.contact-page .field.is-valid input:not([type="checkbox"]),
+.contact-page .field.is-valid select {
+  border-color: var(--clc-ok);
+}
+
+.contact-page .enquiry__submit {
+  margin-top: 1.8rem;
+}
+
+.contact-page .enquiry__submit .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  min-height: 52px;
+  padding: 0.85rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 800;
+}
+
+.contact-page .enquiry__submit .btn i {
+  font-size: 1.1rem;
+}
+
+.contact-page .enquiry__note {
+  margin: 0.85rem 0 0;
+  color: var(--clc-muted);
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.contact-page .enquiry__submit .is-loading {
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+.contact-page .enquiry-done {
+  padding: 2.5rem 1rem;
+  text-align: center;
+}
+
+.contact-page .enquiry-done svg {
+  width: 76px;
+  height: 76px;
+  margin-bottom: 1.2rem;
+  fill: none;
+  stroke: var(--clc-ok);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.contact-page .enquiry-done h3 {
+  color: var(--clc-navy);
+  font-family: var(--font-head);
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.contact-page .enquiry-done p {
+  max-width: 520px;
+  margin: 0.8rem auto 1.4rem;
+  color: var(--clc-muted);
+  line-height: 1.7;
+}
+
+.contact-page .enquiry-done .btns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.contact-page .enquiry-done .link-btn {
+  display: block;
+  margin: 1.2rem auto 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--clc-red);
+  font-weight: 800;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Mobile layout */
+
+@media (max-width: 575.98px) {
+  .contact-page .enquiry__grid {
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+  }
+
+  .contact-page .field--full {
+    grid-column: auto;
+  }
+
+  .contact-page .enquiry__submit .btn {
+    width: 100%;
+  }
+
+  .contact-page .enquiry-done .btns {
+    flex-direction: column;
+  }
+
+  .contact-page .enquiry-done .btns .btn {
+    width: 100%;
+  }
+}
+
+
+/* =========================================
+   CLC HEADER BOOKING MODAL
+   Scoped only to BookingModal.jsx
+========================================= */
+
+.modal-booking {
+  max-width: 680px;
+  width: calc(100% - 30px);
+  margin: 1.5rem auto;
+}
+
+.modal-booking .modal-content {
+  border: 0;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 25px 80px rgba(15, 23, 42, 0.22);
+}
+
+.modal-booking .modal-header {
+  padding: 1.5rem 1.7rem 0.6rem;
+  align-items: center;
+}
+
+.modal-booking .modal-title {
+  margin: 0;
+  color: var(--clc-navy);
+  font-family: var(--font-head);
+  font-size: 1.55rem;
+  font-weight: 700;
+}
+
+.modal-booking .btn-close {
+  flex-shrink: 0;
+  box-shadow: none;
+}
+
+.modal-booking .modal-body {
+  padding: 0.5rem 1.7rem 1.7rem !important;
+}
+
+.modal-booking .enquiry-wrap {
+  width: 100%;
+}
+
+.modal-booking .form-lead {
+  margin-bottom: 1.25rem;
+  color: var(--clc-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.modal-booking .enquiry {
+  width: 100%;
+}
+
+.modal-booking .enquiry__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.1rem 1rem;
+}
+
+.modal-booking .field {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.modal-booking .field label,
+.modal-booking .field legend {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.45rem;
+  color: var(--clc-navy);
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.modal-booking .field .opt {
+  color: var(--clc-muted);
+  font-size: 0.76rem;
+  font-weight: 500;
+}
+
+.modal-booking .field input:not([type="checkbox"]),
+.modal-booking .field select,
+.modal-booking .field textarea {
+  display: block;
+  width: 100%;
+  min-height: 46px;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--clc-field);
+  border-radius: 9px;
+  background-color: #fff;
+  color: var(--clc-ink);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  outline: none;
+  box-shadow: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.modal-booking .field input::placeholder,
+.modal-booking .field textarea::placeholder {
+  color: #9299a7;
+}
+
+.modal-booking .field input:focus,
+.modal-booking .field select:focus,
+.modal-booking .field textarea:focus {
+  border-color: var(--clc-focus);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.modal-booking .field select {
+  cursor: pointer;
+}
+
+.modal-booking .field textarea {
+  min-height: 95px;
+  resize: vertical;
+}
+
+.modal-booking .field--full {
+  grid-column: 1 / -1;
+}
+
+.modal-booking .phone-wrap {
+  display: flex;
+  align-items: center;
+  min-height: 46px;
+  overflow: hidden;
+  border: 1px solid var(--clc-field);
+  border-radius: 9px;
+  background: #fff;
+}
+
+.modal-booking .phone-wrap:focus-within {
+  border-color: var(--clc-focus);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.modal-booking .phone-wrap .prefix {
+  padding: 0 0.8rem;
+  border-right: 1px solid var(--clc-line);
+  color: var(--clc-muted);
+  font-weight: 800;
+}
+
+.modal-booking .phone-wrap input {
+  flex: 1;
+  min-width: 0;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.modal-booking .field__count {
+  float: right;
+  color: var(--clc-muted);
+  font-size: 0.76rem;
+  font-weight: 500;
+}
+
+.modal-booking .chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.65rem;
+}
+
+.modal-booking .chip {
+  position: relative;
+  display: inline-flex !important;
+  width: auto !important;
+  margin: 0 !important;
+  cursor: pointer;
+}
+
+.modal-booking .chip input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.modal-booking .chip span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 35px;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid var(--clc-line);
+  border-radius: 30px;
+  background: #fff;
+  color: var(--clc-ink);
+  font-size: 0.78rem;
+  font-weight: 700;
+  transition: 0.2s ease;
+}
+
+.modal-booking .chip:hover span {
+  border-color: var(--clc-red);
+  color: var(--clc-red);
+}
+
+.modal-booking .chip input:checked + span {
+  border-color: var(--clc-red);
+  background: var(--clc-red-tint);
+  color: var(--clc-red-dark);
+}
+
+.modal-booking .chip input:focus-visible + span {
+  outline: 3px solid rgba(37, 99, 235, 0.2);
+  outline-offset: 2px;
+}
+
+.modal-booking .field__err {
+  margin: 0.35rem 0 0;
+  color: #c62828;
+  font-size: 0.77rem;
+  font-weight: 700;
+}
+
+.modal-booking .field.has-error input:not([type="checkbox"]),
+.modal-booking .field.has-error select,
+.modal-booking .field.has-error .phone-wrap {
+  border-color: #d32f2f;
+}
+
+.modal-booking .enquiry__submit {
+  margin-top: 1.3rem;
+}
+
+.modal-booking .enquiry__submit .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 100%;
+  min-height: 48px;
+  padding: 0.75rem 1rem;
+  border-radius: 9px;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.modal-booking .enquiry__note {
+  margin: 0.65rem 0 0;
+  color: var(--clc-muted);
+  font-size: 0.76rem;
+  line-height: 1.55;
+}
+
+.modal-booking .enquiry__submit .is-loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Success screen */
+
+.modal-booking .enquiry-done {
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
+.modal-booking .enquiry-done svg {
+  width: 70px;
+  height: 70px;
+  fill: none;
+  stroke: var(--clc-ok);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.modal-booking .enquiry-done h3 {
+  color: var(--clc-navy);
+  font-family: var(--font-head);
+}
+
+.modal-booking .enquiry-done p {
+  color: var(--clc-muted);
+  line-height: 1.6;
+}
+
+.modal-booking .enquiry-done .btns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.modal-booking .enquiry-done .link-btn {
+  display: block;
+  margin: 1rem auto 0;
+  border: 0;
+  background: transparent;
+  color: var(--clc-red);
+  font-weight: 800;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Modal mobile responsive */
+
+@media (max-width: 575.98px) {
+  .modal-booking {
+    width: calc(100% - 20px);
+    margin: 0.6rem auto;
+  }
+
+  .modal-booking .modal-content {
+    border-radius: 16px;
+  }
+
+  .modal-booking .modal-header {
+    padding: 1.1rem 1rem 0.5rem;
+  }
+
+  .modal-booking .modal-title {
+    font-size: 1.25rem;
+  }
+
+  .modal-booking .modal-body {
+    padding: 0.5rem 1rem 1.2rem !important;
+  }
+
+  .modal-booking .enquiry__grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .modal-booking .field--full {
+    grid-column: auto;
+  }
+
+  .modal-booking .enquiry-done .btns {
+    flex-direction: column;
+  }
+
+  .modal-booking .enquiry-done .btns .btn {
+    width: 100%;
+  }
+}
+
+
 
 /* ---------- Footer ---------- */
 .site-footer { background: #0B1120; color: #A9B4C7; font-size: 0.97rem; padding: 3.5rem 0 1.4rem; }
