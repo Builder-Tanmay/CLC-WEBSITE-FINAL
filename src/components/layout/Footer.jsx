@@ -13,9 +13,15 @@ export default function Footer() {
                 CLC<span>.</span>
               </span>
             </Link>
-            <p className="pe-lg-4 mb-0">
+            <p className="pe-lg-4 mb-3">
               Child Learning Centre provides personalised, evidence-based developmental and pediatric therapy across Maharashtra, since 2013.
             </p>
+            <div className="d-flex align-items-center gap-2 text-muted small">
+              <span className="badge bg-danger-subtle text-danger px-2.5 py-1 rounded-pill fw-bold">
+                ISO &amp; Clinical Excellence
+              </span>
+              <span>13+ Years Trusted Care</span>
+            </div>
           </div>
 
           <div className="col-6 col-lg-2">
@@ -36,23 +42,43 @@ export default function Footer() {
               <li>
                 <Link to="/reviews">Reviews</Link>
               </li>
+              <li>
+                <Link to="/contact">Contact</Link>
+              </li>
             </ul>
           </div>
 
           <div className="col-6 col-lg-3">
-            <h2>Therapies</h2>
+            <h2>Services &amp; Support</h2>
             <ul className="footer-links">
               <li>
-                <Link to="/therapies">Occupational therapy</Link>
+                <Link to="/services/therapies" className="fw-bold text-dark">
+                  All Therapy Programs
+                </Link>
               </li>
               <li>
-                <Link to="/therapies">Speech and language</Link>
+                <Link to="/services/therapies#ot">Occupational therapy</Link>
               </li>
               <li>
-                <Link to="/therapies">Sensory integration</Link>
+                <Link to="/services/therapies#speech">Speech and language</Link>
               </li>
               <li>
-                <Link to="/therapies">ADHD and attention</Link>
+                <Link to="/services/therapies#sensory">Sensory integration</Link>
+              </li>
+              <li>
+                <Link to="/services/therapies#adhd">ADHD &amp; attention</Link>
+              </li>
+              <li className="mt-2 pt-2 border-top">
+                <Link to="/services/areas-of-support" className="fw-bold text-danger">
+                  <i className="bi bi-arrow-right-circle me-1"></i>
+                  Areas of Support
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/areas-of-support#speech-language-delay">Speech Delays</Link>
+              </li>
+              <li>
+                <Link to="/services/areas-of-support#sensory-processing-meltdowns">Sensory Meltdowns</Link>
               </li>
             </ul>
           </div>
@@ -92,4 +118,3 @@ export default function Footer() {
     </footer>
   );
 }
-
