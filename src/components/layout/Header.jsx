@@ -3,6 +3,7 @@ import { NavLink, Link } from 'react-router-dom';
 import { useModal } from '../../context/ModalContext';
 import MobileMenu from './MobileMenu';
 
+
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -91,12 +92,12 @@ export default function Header() {
               <i className="bi bi-telephone"></i>Call us
             </a>
             <button
-              type="button"
-              className="btn btn-clc d-none d-sm-inline-flex"
-              onClick={() => openBooking()}
-            >
-              Book a consultation
-            </button>
+  type="button"
+  className="btn btn-clc d-none d-sm-inline-flex"
+  onClick={() => openBooking()}
+>
+  Book a consultation
+</button>
             <button
               type="button"
               className="menu-toggle d-xl-none"
