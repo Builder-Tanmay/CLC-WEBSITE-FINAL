@@ -114,16 +114,15 @@ export default function Header() {
                 className={`aceternity-dropdown-panel ${isServicesDropdownOpen ? 'is-visible' : ''}`}
               >
                 <div className="aceternity-dropdown-card p-3 shadow-xl">
-                  
+
                   {/* Item 1: Therapy Programs */}
                   <Link
                     to="/services/therapies"
                     onClick={() => setIsServicesDropdownOpen(false)}
-                    className={`aceternity-dropdown-item d-flex align-items-center gap-3 p-3 rounded-3 ${
-                      location.pathname === '/services/therapies' || location.pathname === '/therapies'
-                        ? 'is-current'
-                        : ''
-                    }`}
+                    className={`aceternity-dropdown-item d-flex align-items-center gap-3 p-3 rounded-3 ${location.pathname === '/services/therapies' || location.pathname === '/therapies'
+                      ? 'is-current'
+                      : ''
+                      }`}
                   >
                     <div className="aceternity-icon-box bg-rose-tint text-rose d-flex align-items-center justify-content-center">
                       <i className="bi bi-heart-pulse-fill"></i>
@@ -145,11 +144,10 @@ export default function Header() {
                   <Link
                     to="/services/areas-of-support"
                     onClick={() => setIsServicesDropdownOpen(false)}
-                    className={`aceternity-dropdown-item d-flex align-items-center gap-3 p-3 rounded-3 ${
-                      location.pathname === '/services/areas-of-support' || location.pathname === '/areas-of-support'
-                        ? 'is-current'
-                        : ''
-                    }`}
+                    className={`aceternity-dropdown-item d-flex align-items-center gap-3 p-3 rounded-3 ${location.pathname === '/services/areas-of-support' || location.pathname === '/areas-of-support'
+                      ? 'is-current'
+                      : ''
+                      }`}
                   >
                     <div className="aceternity-icon-box bg-teal-tint text-teal d-flex align-items-center justify-content-center">
                       <i className="bi bi-grid-fill"></i>
@@ -225,12 +223,12 @@ export default function Header() {
               <i className="bi bi-telephone"></i>Call us
             </a>
             <button
-  type="button"
-  className="btn btn-clc d-none d-sm-inline-flex"
-  onClick={() => openBooking()}
->
-  Book a consultation
-</button>
+              type="button"
+              className="btn btn-clc d-none d-sm-inline-flex"
+              onClick={() => openBooking()}
+            >
+              Book a consultation
+            </button>
             <button
               type="button"
               className="menu-toggle d-xl-none"

@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ModalProvider } from './context/ModalContext';
 
@@ -37,26 +37,24 @@ export default function App() {
         <TopBar />
         <Header />
 
-        <main id="main">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/about" element={<AboutPage />} />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
 
-            {/* Services & Support Routes */}
-            <Route path="/services" element={<TherapyProgramsPage />} />
-            <Route path="/services/therapies" element={<TherapyProgramsPage />} />
-            <Route path="/services/areas-of-support" element={<AreasOfSupportPage />} />
-            <Route path="/therapies" element={<TherapyProgramsPage />} />
-            <Route path="/areas-of-support" element={<AreasOfSupportPage />} />
+          {/* Services & Support Routes */}
+          <Route path="/services" element={<TherapyProgramsPage />} />
+          <Route path="/services/therapies" element={<TherapyProgramsPage />} />
+          <Route path="/services/areas-of-support" element={<AreasOfSupportPage />} />
+          <Route path="/therapies" element={<TherapyProgramsPage />} />
+          <Route path="/areas-of-support" element={<AreasOfSupportPage />} />
 
-            <Route path="/how-it-works" element={<HowItWorksPage />} />
-            <Route path="/centres" element={<CentresPage />} />
-            <Route path="/parents-corner" element={<ParentsCornerPage />} />
-            <Route path="/reviews" element={<ReviewsPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
-        </main>
+          <Route path="/how-it-works" element={<HowItWorksPage />} />
+          <Route path="/centres" element={<CentresPage />} />
+          <Route path="/parents-corner" element={<ParentsCornerPage />} />
+          <Route path="/reviews" element={<ReviewsPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
 
         <Footer />
         <MobileActionBar />

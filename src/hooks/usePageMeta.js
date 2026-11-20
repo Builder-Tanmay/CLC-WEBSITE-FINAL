@@ -52,3 +52,4 @@ export default function usePageMeta({ title, description, canonical }) {
     };
   }, [title, description, canonical]);
 }
+

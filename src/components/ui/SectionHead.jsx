@@ -9,3 +9,4 @@ export default function SectionHead({ title, children, className = '', as = 'h2'
     </Reveal>
   );
 }
+

@@ -17,7 +17,6 @@ import Reveal, { SplitText } from '../components/common/Motion';
 
 export default function AboutPage() {
   const { openBooking } = useModal();
-  useHeroParallax();
 
   usePageMeta({
     title: 'About Us | Child Learning Centre (CLC)',
