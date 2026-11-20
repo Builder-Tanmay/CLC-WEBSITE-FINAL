@@ -14,7 +14,7 @@ export default function ContactPage() {
       {/* Hero Section */}
       <Reveal as="section" className="contact-hero">
         <div className="container">
-          <div className="row align-items-center g-5">
+          <div className="row align-items-center g-4 g-lg-5">
             <div className="col-lg-7">
               <span className="contact-tag">
                 <i className="bi bi-geo-alt-fill me-1" aria-hidden="true"></i>

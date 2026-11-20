@@ -2,12 +2,14 @@
    PARENT'S CORNER
 ========================================= */
 
+.parents-corner-page,
 .parents-page {
-  overflow: hidden;
+  overflow-x: clip;
   background: var(--clc-cream);
   color: var(--clc-ink);
 }
 
+.parents-corner-page section[id],
 .parents-page section[id] {
   scroll-margin-top: 100px;
 }
