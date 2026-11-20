@@ -17,10 +17,7 @@ export default function Footer() {
               Child Learning Centre provides personalised, evidence-based developmental and pediatric therapy across Maharashtra, since 2013.
             </p>
             <div className="d-flex align-items-center gap-2 text-muted small">
-              <span className="badge bg-danger-subtle text-danger px-2.5 py-1 rounded-pill fw-bold">
-                ISO &amp; Clinical Excellence
-              </span>
-              <span>13+ Years Trusted Care</span>
+              <span>13+ years of trusted care</span>
             </div>
           </div>
 

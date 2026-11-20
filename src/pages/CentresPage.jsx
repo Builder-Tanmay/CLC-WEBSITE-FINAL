@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { centres } from '../data/centresData';
 import CentreCard from '../components/ui/CentreCard';
+import CtaBand from '../components/ui/CtaBand';
 import { useModal } from '../context/ModalContext';
 import Reveal from '../components/common/Motion';
 
@@ -143,19 +144,19 @@ export default function CentresPage() {
           </Reveal>
 
           {/* Centre Cards */}
-          <Reveal className="row g-4 centres-grid" aria-live="polite">
+          <Reveal key={centreFilter} className="row g-4 centres-grid" aria-live="polite">
 
             {filteredCentres.length > 0 ? (
               filteredCentres.map((centre, index) => (
                 <CentreCard
                   key={centre.id}
                   centre={centre}
-                  delay={index * 70}
+                  delay={(index % 4) * 70}
                 />
               ))
             ) : (
               <div className="col-12">
-                <p className="text-center py-5">
+                <p className="text-center py-5 text-muted">
                   No centres found in this location.
                 </p>
               </div>
@@ -166,60 +167,11 @@ export default function CentresPage() {
         </div>
       </section>
 
-      {/* Contact CTA */}
-      <section className="centres-contact-section">
-        <div className="container">
-          <Reveal className="centres-contact">
-
-            <div className="centres-contact__icon">
-              <i className="bi bi-chat-heart"></i>
-            </div>
-
-            <div className="centres-contact__content">
-              <span>NEED HELP CHOOSING?</span>
-              <h2>Not sure which centre is right for you?</h2>
-              <p>
-                Our team can help you find a convenient location
-                and guide you through the appointment process.
-                Get in touch with us today.
-              </p>
-            </div>
-
-            <div className="centres-contact__actions">
-
-              <button
-                type="button"
-                className="btn btn-clc"
-                onClick={() => openBooking()}
-              >
-                <i className="bi bi-calendar-check me-2"></i>
-                Book Consultation
-              </button>
-
-              <a
-                href="https://wa.me/919004460650?text=Hello%2C%20I%20would%20like%20help%20choosing%20a%20CLC%20centre."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn centres-whatsapp-btn"
-              >
-                <i className="bi bi-whatsapp me-2"></i>
-                WhatsApp Us
-              </a>
-
-              <a
-                href="tel:+919004460650"
-                className="centres-contact__phone"
-              >
-                <i className="bi bi-telephone me-2"></i>
-                +91 90044 60650
-              </a>
-
-            </div>
-
-          </Reveal>
-        </div>
-      </section>
-
+      {/* CTA Band */}
+      <CtaBand
+        title="Not sure which centre is right for you?"
+        lead="Our team will help you choose a convenient clinic in Mumbai, Navi Mumbai, Thane, Nagpur or Nashik."
+      />
     </main>
   );
 }

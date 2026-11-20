@@ -3035,3 +3035,75 @@ button i.bi-arrow-up-right {
   }
 }
 
+/* Marquee separator */
+.marquee__dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--clc-red);
+  margin: 0 1.25rem;
+  vertical-align: middle;
+}
+
+/* Segmented control */
+.segmented-control {
+  display: inline-flex;
+  padding: 4px;
+  background: #EFECE6;
+  border-radius: 999px;
+  gap: 4px;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.segmented-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--clc-navy);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.25s var(--ease), color 0.25s var(--ease);
+}
+
+.segmented-btn.is-active {
+  background: var(--clc-navy);
+  color: #fff !important;
+}
+
+.segmented-btn:not(.is-active):hover {
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--clc-red);
+}
+
+/* Badges & Therapy boxes */
+.badge-concern {
+  background: var(--clc-red-tint);
+  color: var(--clc-red);
+  font-weight: 700;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+}
+
+.badge-subtle {
+  background: #EAE6DF;
+  color: var(--clc-navy);
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+}
+
+.therapy-target-box {
+  background: var(--clc-cream);
+  border: 1px solid var(--clc-line);
+}
+
+.therapy-lead {
+  font-size: 1.05rem;
+  color: var(--clc-muted);
+}
+
+

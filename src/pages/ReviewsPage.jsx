@@ -2,6 +2,9 @@ import React from 'react';
 import { reviews, statsData } from '../data/reviewsData';
 import ReviewCard from '../components/ui/ReviewCard';
 import StatsCounter from '../components/ui/StatsCounter';
+import PageHero from '../components/ui/PageHero';
+import CtaBand from '../components/ui/CtaBand';
+import Reveal from '../components/common/Motion';
 import { useModal } from '../context/ModalContext';
 
 export default function ReviewsPage() {
@@ -9,76 +12,68 @@ export default function ReviewsPage() {
 
   return (
     <main id="main">
-      {/* Header Banner */}
-      <section className="section section--white pb-0">
-        <div className="container">
-          <div className="section-head mb-4">
-            <span className="hero__note d-inline-block ps-3 border-start border-3 border-danger mb-2">
-              Parent Testimonials
-            </span>
-            <h1 className="h2 mb-3">Stories of growth, confidence, and milestones</h1>
-            <p className="lead text-muted">
-              Read how personalized pediatric therapy and parent collaboration have helped children flourish at home and in school.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* Page Hero */}
+      <PageHero
+        crumbs={[
+          { label: 'Home', to: '/' },
+          { label: 'Reviews' }
+        ]}
+        eyebrow="Parent feedback"
+        title="Stories of growth, confidence and progress"
+        lead="Read how paediatric therapy and regular parent debriefs have helped children build skills at home and in school."
+        image="/assets/centre/centre-4.jpg"
+        actions={
+          <button
+            type="button"
+            className="btn btn-clc btn-lg-clc"
+            onClick={() => openBooking()}
+          >
+            Book an evaluation
+          </button>
+        }
+      />
 
       {/* Stats Ribbon */}
       <div className="stats-wrap">
         <div className="container">
-          <dl className="stats">
-            {statsData.map((stat, i) => (
-              <div key={i}>
-                <StatsCounter
-                  value={stat.value}
-                  suffix={stat.suffix}
-                  decimals={stat.decimals || 0}
-                  isFormatted={stat.isFormatted}
-                />
-                <dd>{stat.label}</dd>
-              </div>
-            ))}
-          </dl>
+          <Reveal variant="zoom">
+            <dl className="stats">
+              {statsData.map((stat, i) => (
+                <div key={i}>
+                  <StatsCounter
+                    value={stat.value}
+                    suffix={stat.suffix}
+                    decimals={stat.decimals || 0}
+                    isFormatted={stat.isFormatted}
+                  />
+                  <dd>{stat.label}</dd>
+                </div>
+              ))}
+            </dl>
+          </Reveal>
         </div>
       </div>
 
       {/* Reviews Grid */}
-      <section className="section pt-4">
+      <section className="section pt-5">
         <div className="container">
           <div className="row g-4">
-            {reviews.map((rev) => (
+            {reviews.map((rev, i) => (
               <div key={rev.id} className="col-md-6 col-lg-4">
-                <ReviewCard review={rev} />
+                <Reveal delay={(i % 4) * 110}>
+                  <ReviewCard review={rev} />
+                </Reveal>
               </div>
             ))}
           </div>
-
-          <div className="mt-5 p-4 rounded-4 bg-white border border-light-subtle shadow-sm text-center">
-            <div className="mb-3">
-              <span className="review__stars fs-4" aria-label="5 stars">
-                <i className="bi bi-star-fill text-warning me-1"></i>
-                <i className="bi bi-star-fill text-warning me-1"></i>
-                <i className="bi bi-star-fill text-warning me-1"></i>
-                <i className="bi bi-star-fill text-warning me-1"></i>
-                <i className="bi bi-star-fill text-warning"></i>
-              </span>
-            </div>
-            <h3 className="h5 mb-2">Rated 4.8 / 5 Across Maharashtra on Google</h3>
-            <p className="text-muted mb-4 max-w-600 mx-auto">
-              Our greatest satisfaction is seeing children laugh, communicate clearly, and take confident steps in their everyday routines.
-            </p>
-            <button
-              type="button"
-              className="btn btn-clc"
-              onClick={() => openBooking()}
-            >
-              Start your child's journey with us
-            </button>
-          </div>
         </div>
       </section>
+
+      {/* CTA Band */}
+      <CtaBand
+        title="Rated 4.8 / 5 on Google across Maharashtra"
+        lead="Every session ends with a debrief and practical home activities so you always know what we worked on and what to practise."
+      />
     </main>
   );
 }
-

@@ -1,14 +1,14 @@
-
 import React from 'react';
 import { getMapsUrl } from '../../data/centresData';
+import Reveal from '../common/Motion';
 
 export default function CentreCard({ centre, delay = 0 }) {
   const cleanPhone = String(centre.phone || '').replace(/\s+/g, '');
 
   return (
-    <div
+    <Reveal
       className="col-md-6 col-lg-4 centre-card"
-      style={{ animationDelay: `${delay}ms` }}
+      delay={delay}
     >
       <article className="centre-card__content h-100">
 
@@ -24,7 +24,7 @@ export default function CentreCard({ centre, delay = 0 }) {
               aria-label="Head Office"
             >
               <i className="bi bi-star-fill me-1"></i>
-              Head Office
+              Head office
             </span>
           )}
         </div>
@@ -39,7 +39,7 @@ export default function CentreCard({ centre, delay = 0 }) {
         <div className="centre-card__timing">
           <i className="bi bi-clock"></i>
           <div>
-            <span>Opening Hours</span>
+            <span>Opening hours</span>
             <strong>{centre.timing}</strong>
           </div>
         </div>
@@ -69,6 +69,6 @@ export default function CentreCard({ centre, delay = 0 }) {
         </div>
 
       </article>
-    </div>
+    </Reveal>
   );
 }

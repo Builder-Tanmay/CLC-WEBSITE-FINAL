@@ -149,7 +149,7 @@ export default function HomePage() {
           {[...MARQUEE, ...MARQUEE, ...MARQUEE, ...MARQUEE].map((m, i) => (
             <span key={i} className="marquee__item">
               {m}
-              <i className="bi bi-stars"></i>
+              <span className="marquee__dot" aria-hidden="true"></span>
             </span>
           ))}
         </div>
