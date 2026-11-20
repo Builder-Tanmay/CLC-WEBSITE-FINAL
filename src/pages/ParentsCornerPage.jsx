@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 import { useModal } from '../context/ModalContext';
-import '../../css/ParentsCornerPage.css';
+import Reveal from '../components/common/Motion';
+import '../styles/ParentsCornerPage.css';
 
 
 const topics = [
@@ -127,76 +128,10 @@ const faqs = [
 export default function ParentsCornerPage() {
     const { openBooking } = useModal();
 
-    const pageRef = useRef(null);
-
-    useEffect(() => {
-        const page = pageRef.current;
-
-        if (!page) return;
-
-        const revealElements = page.querySelectorAll('[data-reveal]');
-
-        if (!revealElements.length) return;
-
-        if (
-            window.matchMedia &&
-            window.matchMedia('(prefers-reduced-motion: reduce)').matches
-        ) {
-            return;
-        }
-
-        if (!('IntersectionObserver' in window)) {
-            revealElements.forEach((element) => {
-                element.classList.add('is-visible');
-            });
-            return;
-        }
-
-        let observer;
-
-        try {
-            observer = new IntersectionObserver(
-                (entries) => {
-                    entries.forEach((entry) => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('is-visible');
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                },
-                {
-                    threshold: 0.12,
-                    rootMargin: '0px 0px -50px 0px',
-                }
-            );
-
-            revealElements.forEach((element) => {
-                observer.observe(element);
-            });
-
-            page.classList.add('reveal-ready');
-        } catch (error) {
-            page.classList.remove('reveal-ready');
-
-            revealElements.forEach((element) => {
-                element.classList.add('is-visible');
-            });
-        }
-
-        return () => {
-            observer?.disconnect();
-            page.classList.remove('reveal-ready');
-
-            revealElements.forEach((element) => {
-                element.classList.remove('is-visible');
-            });
-        };
-    }, []);
-
     return (
-        <main className="parents-corner-page" ref={pageRef}>
+        <main id="main" className="parents-corner-page">
             {/* Hero */}
-            <section className="parents-hero" data-reveal>
+            <Reveal as="section" className="parents-hero">
                 <div className="container">
                     <div className="parents-hero__content">
                         <span className="parents-eyebrow">
@@ -249,21 +184,12 @@ export default function ParentsCornerPage() {
                             <i className="bi bi-heart-fill"></i>
                             <span>Learn. Connect. Grow.</span>
                         </div>
-
-                        <div className="parents-hero__decoration" aria-hidden="true">
-                            <div className="parents-hero__circle">
-                                <i className="bi bi-flower1"></i>
-                            </div>
-                            <span className="parents-hero__dot parents-hero__dot--one"></span>
-                            <span className="parents-hero__dot parents-hero__dot--two"></span>
-                            <span className="parents-hero__dot parents-hero__dot--three"></span>
-                        </div>
                     </div>
                 </div>
-            </section>
+            </Reveal>
 
             {/* Topics */}
-            <section id="parent-topics" className="section parents-topics" data-reveal>
+            <Reveal as="section" id="parent-topics" className="section parents-topics">
                 <div className="container">
                     <div className="parents-section-heading">
                         <span className="parents-eyebrow">Explore and understand</span>
@@ -293,11 +219,11 @@ export default function ParentsCornerPage() {
                         ))}
                     </div>
                 </div>
-            </section>
+            </Reveal>
 
 
             {/* Topic Guides */}
-            <section className="section parents-topic-guides" data-reveal>
+            <Reveal as="section" className="section parents-topic-guides">
                 <div className="container">
                     <div className="parents-section-heading">
                         <span className="parents-eyebrow">A little guidance goes a long way</span>
@@ -336,12 +262,14 @@ export default function ParentsCornerPage() {
                         ))}
                     </div>
                 </div>
-            </section>
+            </Reveal>
 
             {/* Everyday guidance */}
-            <section
+            <Reveal
+                as="section"
                 id="everyday-guidance"
-                className="section parents-guidance" data-reveal>
+                className="section parents-guidance"
+            >
                 <div className="container">
                     <div className="parents-section-heading">
                         <span className="parents-eyebrow">Little things that matter</span>
@@ -375,10 +303,10 @@ export default function ParentsCornerPage() {
                         strategies.
                     </p>
                 </div>
-            </section>
+            </Reveal>
 
             {/* Parent reassurance */}
-            <section className="parents-reassurance" data-reveal>
+            <Reveal as="section" className="parents-reassurance">
                 <div className="container">
                     <div className="parents-reassurance__inner">
                         <div>
@@ -392,10 +320,10 @@ export default function ParentsCornerPage() {
                         </p>
                     </div>
                 </div>
-            </section>
+            </Reveal>
 
             {/* FAQs */}
-            <section id="parent-faqs" className="section parents-faq" data-reveal>
+            <Reveal as="section" id="parent-faqs" className="section parents-faq">
                 <div className="container">
                     <div className="parents-section-heading">
                         <span className="parents-eyebrow">Here to help</span>
@@ -419,10 +347,10 @@ export default function ParentsCornerPage() {
                         ))}
                     </div>
                 </div>
-            </section>
+            </Reveal>
 
             {/* Consultation CTA */}
-            <section className="parents-cta" data-reveal>
+            <Reveal as="section" className="parents-cta">
                 <div className="container">
                     <div className="parents-cta__inner">
                         <div>
@@ -444,7 +372,7 @@ export default function ParentsCornerPage() {
                         </button>
                     </div>
                 </div>
-            </section>
+            </Reveal>
         </main>
     );
 }

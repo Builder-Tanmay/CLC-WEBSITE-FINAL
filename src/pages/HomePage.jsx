@@ -14,6 +14,7 @@ import ReviewCard from '../components/ui/ReviewCard';
 import Timeline from '../components/ui/Timeline';
 import Faq from '../components/ui/Faq';
 import BookingForm from '../components/forms/BookingForm';
+import SectionHead from '../components/ui/SectionHead';
 import Reveal, { SplitText, useHeroParallax } from '../components/common/Motion';
 
 const HERO_WORDS = 'Every child has potential. We help build the bridge to it.'.split(' ');
@@ -35,14 +36,7 @@ const CONCERN_CARDS = [
   { icon: 'bi-question-circle', title: 'Not sure yet', text: 'Tell us what you have noticed and we will help you work out where to start.', value: 'General Screening' }
 ];
 
-function SectionHead({ title, children }) {
-  return (
-    <Reveal className="section-head">
-      <SplitText text={title} as="h2" />
-      {children && <p>{children}</p>}
-    </Reveal>
-  );
-}
+
 
 export default function HomePage() {
   const { openBooking, openVideo } = useModal();

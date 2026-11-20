@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import { centres } from '../data/centresData';
 import CentreCard from '../components/ui/CentreCard';
 import { useModal } from '../context/ModalContext';
+import Reveal from '../components/common/Motion';
 
 const filters = [
   { value: 'all', label: 'All Centres' },
@@ -21,83 +22,8 @@ export default function CentresPage() {
 
   const cityCount = new Set(centres.map((centre) => centre.area)).size;
 
-  const pageRef = useRef(null);
-
-  useEffect(() => {
-    const page = pageRef.current;
-
-    if (!page) return;
-
-    const revealElements = page.querySelectorAll('[data-reveal]');
-
-    if (!revealElements.length) return;
-
-    // Respect accessibility preferences.
-    if (
-      window.matchMedia &&
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    ) {
-      return;
-    }
-
-    // Fallback: keep everything visible if IntersectionObserver is unavailable.
-    if (!('IntersectionObserver' in window)) {
-      revealElements.forEach((element) => {
-        element.classList.add('is-visible');
-      });
-
-      return;
-    }
-
-    let observer;
-
-    try {
-      observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        {
-          threshold: 0.12,
-          rootMargin: '0px 0px -50px 0px',
-        }
-      );
-
-      revealElements.forEach((element) => {
-        observer.observe(element);
-      });
-
-      // Enable the hidden-before-reveal state only after setup succeeds.
-      page.classList.add('reveal-ready');
-
-    } catch (error) {
-      // If setup fails, show all content instead of leaving it hidden.
-      page.classList.remove('reveal-ready');
-
-      revealElements.forEach((element) => {
-        element.classList.add('is-visible');
-      });
-    }
-
-    return () => {
-      if (observer) {
-        observer.disconnect();
-      }
-
-      page.classList.remove('reveal-ready');
-
-      revealElements.forEach((element) => {
-        element.classList.remove('is-visible');
-      });
-    };
-  }, []);
-
   return (
-    <main id="main" className="centres-page" ref={pageRef}>
+    <main id="main" className="centres-page">
 
 
       {/* Page Introduction */}
@@ -106,7 +32,7 @@ export default function CentresPage() {
           <div className="row align-items-center g-4 centres-hero__layout">
 
             <div className="col-lg-7">
-              <div className="centres-hero__content" data-reveal>
+              <Reveal className="centres-hero__content">
                 <span className="centres-eyebrow">
                   <i className="bi bi-geo-alt-fill"></i>
                   Our Locations Across Maharashtra
@@ -147,11 +73,11 @@ export default function CentresPage() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </Reveal>
             </div>
 
             <div className="col-lg-5">
-              <div className="centres-hero__visual" data-reveal="clip">
+              <Reveal variant="clip" className="centres-hero__visual">
                 <img
                   src="/assets/centre/WhatsApp Image 2026-10-07 at 7.26.04 PM (1).jpeg"
                   alt="Parents and the CLC team participating in a group session"
@@ -162,7 +88,7 @@ export default function CentresPage() {
                   <i className="bi bi-heart-fill"></i>
                   Supporting every child's journey
                 </div>
-              </div>
+              </Reveal>
             </div>
 
           </div>
@@ -173,7 +99,7 @@ export default function CentresPage() {
       <section className="centres-directory section">
         <div className="container">
 
-          <div className="centres-section-heading" data-reveal>
+          <Reveal className="centres-section-heading">
             <div>
               <span className="centres-section-kicker">
                 EXPLORE OUR LOCATIONS
@@ -184,10 +110,10 @@ export default function CentresPage() {
                 nearest Child Learning Centre.
               </p>
             </div>
-          </div>
+          </Reveal>
 
           {/* Filters */}
-          <div className="centres-filter-wrapper" data-reveal>
+          <Reveal className="centres-filter-wrapper">
             <div className="centres-filter-list" role="group"
               aria-label="Filter centres by location">
 
@@ -214,10 +140,10 @@ export default function CentresPage() {
               Showing <strong>{filteredCentres.length}</strong>{' '}
               {filteredCentres.length === 1 ? 'centre' : 'centres'}
             </p>
-          </div>
+          </Reveal>
 
           {/* Centre Cards */}
-          <div className="row g-4 centres-grid" aria-live="polite" data-reveal>
+          <Reveal className="row g-4 centres-grid" aria-live="polite">
 
             {filteredCentres.length > 0 ? (
               filteredCentres.map((centre, index) => (
@@ -235,7 +161,7 @@ export default function CentresPage() {
               </div>
             )}
 
-          </div>
+          </Reveal>
 
         </div>
       </section>
@@ -243,7 +169,7 @@ export default function CentresPage() {
       {/* Contact CTA */}
       <section className="centres-contact-section">
         <div className="container">
-          <div className="centres-contact" data-reveal>
+          <Reveal className="centres-contact">
 
             <div className="centres-contact__icon">
               <i className="bi bi-chat-heart"></i>
@@ -290,7 +216,7 @@ export default function CentresPage() {
 
             </div>
 
-          </div>
+          </Reveal>
         </div>
       </section>
 

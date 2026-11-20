@@ -9,16 +9,10 @@ import TeamCard from '../components/ui/TeamCard';
 import JourneyCard from '../components/ui/JourneyCard';
 import StatsCounter from '../components/ui/StatsCounter';
 import Timeline from '../components/ui/Timeline';
-import Reveal, { SplitText, useHeroParallax } from '../components/common/Motion';
-
-function SectionHead({ title, children }) {
-  return (
-    <Reveal className="section-head">
-      <SplitText text={title} as="h2" />
-      {children && <p>{children}</p>}
-    </Reveal>
-  );
-}
+import SectionHead from '../components/ui/SectionHead';
+import PageHero from '../components/ui/PageHero';
+import CtaBand from '../components/ui/CtaBand';
+import Reveal, { SplitText } from '../components/common/Motion';
 
 export default function AboutPage() {
   const { openBooking } = useModal();
@@ -46,41 +40,26 @@ export default function AboutPage() {
   return (
     <main id="main">
       {/* Page hero */}
-      <section className="hero hero--page">
-        <div className="hero__bg" aria-hidden="true">
-          <div className="hero__bg-img" style={{ backgroundImage: "url('/assets/centre/centre-2.jpg')" }}></div>
-        </div>
-        <div className="hero__shapes" aria-hidden="true">
-          <span className="shape shape--1"></span>
-          <span className="shape shape--2"></span>
-        </div>
-        <div className="container position-relative">
-          <nav className="crumbs" aria-label="Breadcrumb">
-            <Link to="/">Home</Link>
-            <i className="bi bi-chevron-right" aria-hidden="true"></i>
-            <span aria-current="page">About</span>
-          </nav>
-          <p className="hero__note">About Child Learning Centre</p>
-          <h1>
-            {'Care that combines clinical skill with patience'.split(' ').map((w, i) => (
-              <React.Fragment key={i}>
-                <span className="w" style={{ '--i': i }}>{w}</span>{' '}
-              </React.Fragment>
-            ))}
-          </h1>
-          <p className="hero__lead">
-            Founded in 2013, CLC has helped over 6,000 children across Maharashtra unlock their natural developmental strengths in a welcoming, family-focused clinic setting.
-          </p>
-          <div className="hero__actions">
+      <PageHero
+        crumbs={[
+          { label: 'Home', to: '/' },
+          { label: 'About' }
+        ]}
+        eyebrow="About Child Learning Centre"
+        title="Care that combines clinical skill with patience"
+        lead="Founded in 2013, CLC has helped over 6,000 children across Maharashtra unlock their natural developmental strengths in a welcoming, family-focused clinic setting."
+        image="/assets/centre/centre-2.jpg"
+        actions={
+          <>
             <button type="button" className="btn btn-clc btn-lg-clc" onClick={() => openBooking()}>
               Book an evaluation
             </button>
             <a href="#team" className="btn btn-clc-outline btn-hero-outline btn-lg-clc">
               Meet the team<i className="bi bi-arrow-down"></i>
             </a>
-          </div>
-        </div>
-      </section>
+          </>
+        }
+      />
 
       {/* Stats */}
       <div className="stats-wrap">
@@ -253,34 +232,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA band */}
-      <section className="section pt-0 pb-5">
-        <div className="container">
-          <Reveal variant="zoom">
-            <div className="cta-band">
-              <span className="shape shape--1" aria-hidden="true"></span>
-              <div className="row align-items-center g-3 position-relative">
-                <div className="col-lg-8">
-                  <h2>Ready to talk about your child?</h2>
-                  <p className="mb-0">Book an evaluation or message us on WhatsApp. We will help you choose a centre and a time.</p>
-                </div>
-                <div className="col-lg-4 d-flex flex-wrap gap-2 justify-content-lg-end">
-                  <button type="button" className="btn btn-clc btn-lg-clc" onClick={() => openBooking()}>
-                    Book an evaluation
-                  </button>
-                  <a
-                    href="https://wa.me/919004460650"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-clc-outline btn-hero-outline btn-lg-clc"
-                  >
-                    <i className="bi bi-whatsapp"></i>WhatsApp
-                  </a>
-                </div>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
+      <CtaBand />
     </main>
   );
 }

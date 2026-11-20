@@ -1,11 +1,20 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 export default function StatsCounter({ value, suffix = '', decimals = 0, isFormatted = false, duration = 1500 }) {
-  const [count, setCount] = useState(0);
-  const [hasAnimated, setHasAnimated] = useState(false);
+  const isReduced =
+    typeof window !== 'undefined' &&
+    window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const [count, setCount] = useState(() => (isReduced ? value : 0));
+  const [hasAnimated, setHasAnimated] = useState(Boolean(isReduced));
   const elementRef = useRef(null);
 
   useEffect(() => {
+    if (isReduced) {
+      setCount(value);
+      setHasAnimated(true);
+      return undefined;
+    }
     const observer = new IntersectionObserver(
       (entries) => {
         const [entry] = entries;
@@ -41,7 +50,7 @@ export default function StatsCounter({ value, suffix = '', decimals = 0, isForma
     }
 
     return () => observer.disconnect();
-  }, [value, duration, hasAnimated]);
+  }, [value, duration, hasAnimated, isReduced]);
 
   const displayValue = isFormatted
     ? Math.round(count).toLocaleString('en-IN')
@@ -54,4 +63,3 @@ export default function StatsCounter({ value, suffix = '', decimals = 0, isForma
     </dt>
   );
 }
-

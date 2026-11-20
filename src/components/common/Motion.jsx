@@ -5,8 +5,17 @@ const OPTS = { threshold: 0.15, rootMargin: '0px 0px -8% 0px' };
 /** True once the element has scrolled into view (fires once). */
 export function useInView(opts = OPTS) {
   const ref = useRef(null);
-  const [seen, setSeen] = useState(false);
+  const isReduced =
+    typeof window !== 'undefined' &&
+    window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const [seen, setSeen] = useState(Boolean(isReduced));
+
   useEffect(() => {
+    if (isReduced) {
+      setSeen(true);
+      return undefined;
+    }
     const el = ref.current;
     if (!el || seen) return undefined;
     if (!('IntersectionObserver' in window)) {
@@ -22,7 +31,8 @@ export function useInView(opts = OPTS) {
     io.observe(el);
     return () => io.disconnect();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [isReduced]);
+
   return [ref, seen];
 }
 
