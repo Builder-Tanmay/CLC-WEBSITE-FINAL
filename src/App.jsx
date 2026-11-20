@@ -37,24 +37,26 @@ export default function App() {
         <TopBar />
         <Header />
 
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<AboutPage />} />
+        <main id="main">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
 
-          {/* Services & Support Routes */}
-          <Route path="/services" element={<TherapyProgramsPage />} />
-          <Route path="/services/therapies" element={<TherapyProgramsPage />} />
-          <Route path="/services/areas-of-support" element={<AreasOfSupportPage />} />
-          <Route path="/therapies" element={<TherapyProgramsPage />} />
-          <Route path="/areas-of-support" element={<AreasOfSupportPage />} />
+            {/* Services & Support Routes */}
+            <Route path="/services" element={<TherapyProgramsPage />} />
+            <Route path="/services/therapies" element={<TherapyProgramsPage />} />
+            <Route path="/services/areas-of-support" element={<AreasOfSupportPage />} />
+            <Route path="/therapies" element={<TherapyProgramsPage />} />
+            <Route path="/areas-of-support" element={<AreasOfSupportPage />} />
 
-          <Route path="/how-it-works" element={<HowItWorksPage />} />
-          <Route path="/centres" element={<CentresPage />} />
-          <Route path="/parents-corner" element={<ParentsCornerPage />} />
-          <Route path="/reviews" element={<ReviewsPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
+            <Route path="/how-it-works" element={<HowItWorksPage />} />
+            <Route path="/centres" element={<CentresPage />} />
+            <Route path="/parents-corner" element={<ParentsCornerPage />} />
+            <Route path="/reviews" element={<ReviewsPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </main>
 
         <Footer />
         <MobileActionBar />
