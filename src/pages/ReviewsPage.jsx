@@ -5,10 +5,17 @@ import StatsCounter from '../components/ui/StatsCounter';
 import PageHero from '../components/ui/PageHero';
 import CtaBand from '../components/ui/CtaBand';
 import Reveal from '../components/common/Motion';
+import usePageMeta from '../hooks/usePageMeta';
 import { useModal } from '../context/ModalContext';
 
 export default function ReviewsPage() {
   const { openBooking } = useModal();
+
+  usePageMeta({
+    title: 'Parent Reviews & Feedback | Child Learning Centre (CLC)',
+    description: 'Read reviews and feedback from parents whose children have grown in speech, sensory regulation and motor confidence with CLC.',
+    canonical: 'https://childlearningcentre.in/reviews'
+  });
 
   return (
     <main id="main">

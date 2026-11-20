@@ -1,6 +1,7 @@
 import React from 'react';
 import { useModal } from '../context/ModalContext';
 import Reveal from '../components/common/Motion';
+import usePageMeta from '../hooks/usePageMeta';
 import '../styles/ParentsCornerPage.css';
 
 
@@ -128,6 +129,12 @@ const faqs = [
 export default function ParentsCornerPage() {
     const { openBooking } = useModal();
 
+    usePageMeta({
+        title: "Parents' Corner | Child Learning Centre (CLC)",
+        description: 'Helpful guidance, communication tips, sensory advice and practical routines to support your child at home.',
+        canonical: 'https://childlearningcentre.in/parents-corner'
+    });
+
     return (
         <main id="main" className="parents-corner-page">
             {/* Hero */}
@@ -171,7 +178,7 @@ export default function ParentsCornerPage() {
 
                     <div className="parents-hero__visual">
                         <img
-                            src="/assets/servicess/WhatsApp%20Image%202026-10-07%20at%207.21.12%20PM%20(4).jpeg"
+                            src="/assets/services/service-7.jpg"
                             alt="Child participating in a learning activity with a therapist"
                             className="parents-hero__image"
                             loading="eager"

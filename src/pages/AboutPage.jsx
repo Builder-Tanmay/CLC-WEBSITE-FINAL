@@ -12,11 +12,18 @@ import Timeline from '../components/ui/Timeline';
 import SectionHead from '../components/ui/SectionHead';
 import PageHero from '../components/ui/PageHero';
 import CtaBand from '../components/ui/CtaBand';
+import usePageMeta from '../hooks/usePageMeta';
 import Reveal, { SplitText } from '../components/common/Motion';
 
 export default function AboutPage() {
   const { openBooking } = useModal();
   useHeroParallax();
+
+  usePageMeta({
+    title: 'About Us | Child Learning Centre (CLC)',
+    description: 'Learn about Child Learning Centre, our multidisciplinary team of therapists, and our clinic locations across Maharashtra since 2013.',
+    canonical: 'https://childlearningcentre.in/about'
+  });
 
   const areas = [...new Set(centres.map((c) => c.area))];
   const milestones = [
@@ -89,7 +96,7 @@ export default function AboutPage() {
             <Reveal variant="left" className="col-lg-6">
               <div className="about-wrap">
                 <div className="about-frame">
-                  <img src="/assets/team/team-1.jpg" alt="The CLC therapy specialists together" />
+                  <img src="/assets/team/team-1.jpg" alt="The CLC therapy specialists together" width="600" height="400" loading="lazy" />
                 </div>
                 <div className="float-badge" aria-hidden="true">
                   <strong>2013</strong>
@@ -200,9 +207,9 @@ export default function AboutPage() {
           <div className="row align-items-center g-4 g-lg-5">
             <Reveal variant="left" className="col-lg-6 order-lg-2">
               <div className="gallery">
-                <figure><img src="/assets/centre/centre-2.jpg" alt="A parent session at a CLC centre" loading="lazy" /></figure>
-                <figure><img src="/assets/centre/centre-4.jpg" alt="Parents attending a CLC workshop" loading="lazy" /></figure>
-                <figure><img src="/assets/centre/centre-5.jpg" alt="A therapist speaking with parents at a centre" loading="lazy" /></figure>
+                <figure><img src="/assets/centre/centre-2.jpg" alt="A parent session at a CLC centre" loading="lazy" width="400" height="300" /></figure>
+                <figure><img src="/assets/centre/centre-4.jpg" alt="Parents attending a CLC workshop" loading="lazy" width="400" height="300" /></figure>
+                <figure><img src="/assets/centre/centre-5.jpg" alt="A therapist speaking with parents at a centre" loading="lazy" width="400" height="300" /></figure>
               </div>
             </Reveal>
             <Reveal variant="right" className="col-lg-6 order-lg-1">

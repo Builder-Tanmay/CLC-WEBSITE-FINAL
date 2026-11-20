@@ -28,7 +28,7 @@ export default function MobileMenu({ isOpen, onClose }) {
       >
         <div className="offcanvas-header border-bottom">
           <div className="d-flex align-items-center gap-2">
-            <img src="/assets/logo/clc-logo.png" alt="CLC Logo" height="32" />
+            <img src="/assets/logo/clc-logo.png" alt="CLC Logo" width="32" height="32" />
             <h2 className="h6 mb-0 text-navy fw-bold" id="mobileMenuLabel">
               Child Learning Centre
             </h2>

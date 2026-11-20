@@ -1,8 +1,14 @@
 import React from 'react';
 import BookingForm from '../components/forms/BookingForm';
 import Reveal from '../components/common/Motion';
+import usePageMeta from '../hooks/usePageMeta';
 
 export default function ContactPage() {
+  usePageMeta({
+    title: 'Contact Us & Book an Evaluation | Child Learning Centre (CLC)',
+    description: 'Connect with Child Learning Centre to discuss your child, inquire about therapies, or book an initial consultation in Maharashtra.',
+    canonical: 'https://childlearningcentre.in/contact'
+  });
   return (
     <main id="main" className="contact-page">
       {/* Hero Section */}

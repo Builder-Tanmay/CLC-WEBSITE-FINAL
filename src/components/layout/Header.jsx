@@ -63,7 +63,7 @@ export default function Header() {
       <header className={`site-header sticky-top ${isScrolled ? 'is-scrolled' : ''}`}>
         <div className="container site-header__inner">
           <Link to="/" className="brand" aria-label="Child Learning Centre, home">
-            <img src="/assets/logo/clc-logo.png" alt="Child Learning Centre logo" height="44" />
+            <img src="/assets/logo/clc-logo.png" alt="Child Learning Centre logo" width="44" height="44" />
             <span className="brand__text">
               <span className="brand__name">
                 CLC<span>.</span>

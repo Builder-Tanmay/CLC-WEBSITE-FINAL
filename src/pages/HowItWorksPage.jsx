@@ -7,9 +7,16 @@ import PageHero from '../components/ui/PageHero';
 import SectionHead from '../components/ui/SectionHead';
 import CtaBand from '../components/ui/CtaBand';
 import Reveal from '../components/common/Motion';
+import usePageMeta from '../hooks/usePageMeta';
 
 export default function HowItWorksPage() {
   const { openBooking, openVideo } = useModal();
+
+  usePageMeta({
+    title: 'How It Works | Child Learning Centre (CLC)',
+    description: 'Understand how our 40-minute therapy sessions, comprehensive initial evaluation, and regular parent debriefs work step by step.',
+    canonical: 'https://childlearningcentre.in/how-it-works'
+  });
 
   return (
     <main id="main">

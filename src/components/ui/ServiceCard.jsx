@@ -13,6 +13,8 @@ export default function ServiceCard({ service }) {
           alt={service.title}
           loading="lazy"
           decoding="async"
+          width="400"
+          height="267"
         />
       </div>
       <div className="tile__body">

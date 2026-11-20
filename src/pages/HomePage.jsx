@@ -15,6 +15,7 @@ import Timeline from '../components/ui/Timeline';
 import Faq from '../components/ui/Faq';
 import BookingForm from '../components/forms/BookingForm';
 import SectionHead from '../components/ui/SectionHead';
+import usePageMeta from '../hooks/usePageMeta';
 import Reveal, { SplitText, useHeroParallax } from '../components/common/Motion';
 
 const HERO_WORDS = 'Every child has potential. We help build the bridge to it.'.split(' ');
@@ -43,6 +44,12 @@ export default function HomePage() {
   const [centreFilter, setCentreFilter] = useState('all');
   const [ri, setRi] = useState(0);
   useHeroParallax();
+
+  usePageMeta({
+    title: 'Child Learning Centre (CLC) | Paediatric Development & Clinical Therapy',
+    description: 'Paediatric occupational therapy, speech and language therapy, sensory integration and ADHD care across Mumbai, Navi Mumbai, Thane, Nagpur and Nashik.',
+    canonical: 'https://childlearningcentre.in/'
+  });
 
   useEffect(() => {
     const t = setInterval(() => setRi((i) => (i + 1) % ROTATE.length), 2600);
@@ -183,7 +190,7 @@ export default function HomePage() {
             <Reveal variant="left" className="col-lg-6">
               <div className="about-wrap">
                 <div className="about-frame">
-                  <img src="/assets/team/team-1.jpg" alt="The CLC therapy team together at a centre" />
+                  <img src="/assets/team/team-1.jpg" alt="The CLC therapy team together at a centre" width="600" height="400" loading="lazy" />
                 </div>
                 <div className="float-badge" aria-hidden="true">
                   <strong>{statsData[0].value}+</strong>
@@ -304,7 +311,7 @@ export default function HomePage() {
                 onClick={() => openVideo('D1gxGckdo4c')}
                 aria-label="Play video: How sensory integration regulates attention"
               >
-                <img src="/assets/centre/centre-1.jpg" alt="Parents and children at a CLC centre" />
+                <img src="/assets/centre/centre-1.jpg" alt="Parents and children at a CLC centre" width="600" height="400" loading="lazy" />
                 <span className="video-thumb__play" aria-hidden="true">
                   <i className="bi bi-play-fill"></i>
                 </span>

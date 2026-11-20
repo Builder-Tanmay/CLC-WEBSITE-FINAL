@@ -4,6 +4,7 @@ import CentreCard from '../components/ui/CentreCard';
 import CtaBand from '../components/ui/CtaBand';
 import { useModal } from '../context/ModalContext';
 import Reveal from '../components/common/Motion';
+import usePageMeta from '../hooks/usePageMeta';
 
 const filters = [
   { value: 'all', label: 'All Centres' },
@@ -15,6 +16,12 @@ const filters = [
 export default function CentresPage() {
   const [centreFilter, setCentreFilter] = useState('all');
   const { openBooking } = useModal();
+
+  usePageMeta({
+    title: 'Our Centres Across Maharashtra | Child Learning Centre (CLC)',
+    description: 'Find a Child Learning Centre clinic near you in Nerul, Vashi, Thane, Chembur, Nagpur or Nashik with addresses, maps and clinic hours.',
+    canonical: 'https://childlearningcentre.in/centres'
+  });
 
   const filteredCentres =
     centreFilter === 'all'
@@ -78,9 +85,11 @@ export default function CentresPage() {
             <div className="col-lg-5">
               <Reveal variant="clip" className="centres-hero__visual">
                 <img
-                  src="/assets/centre/WhatsApp Image 2026-10-07 at 7.26.04 PM (1).jpeg"
+                  src="/assets/centre/centre-3.jpg"
                   alt="Parents and the CLC team participating in a group session"
                   className="centres-hero__image"
+                  width="500"
+                  height="390"
                 />
 
                 <div className="centres-hero__image-note">

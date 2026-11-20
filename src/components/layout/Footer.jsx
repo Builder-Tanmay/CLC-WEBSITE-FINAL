@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="row g-4">
           <div className="col-lg-4">
             <Link to="/" className="brand mb-3">
-              <img src="/assets/logo/clc-logo.png" alt="CLC logo" height="40" />
+              <img src="/assets/logo/clc-logo.png" alt="CLC logo" width="40" height="40" />
               <span className="brand__name">
                 CLC<span>.</span>
               </span>

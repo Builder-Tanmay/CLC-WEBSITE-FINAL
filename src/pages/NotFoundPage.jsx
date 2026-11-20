@@ -1,8 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PageHero from '../components/ui/PageHero';
+import usePageMeta from '../hooks/usePageMeta';
 
 export default function NotFoundPage() {
+  usePageMeta({
+    title: 'Page Not Found | Child Learning Centre (CLC)',
+    description: 'The requested page was not found.',
+    canonical: 'https://childlearningcentre.in/'
+  });
   return (
     <main id="main">
       <PageHero

@@ -1,25 +1,73 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useModal } from '../../context/ModalContext';
 import BookingForm from '../forms/BookingForm';
 
 export default function BookingModal() {
   const { isBookingOpen, closeBooking, bookingConcern } = useModal();
+  const modalRef = useRef(null);
+  const prevFocusRef = useRef(null);
 
   useEffect(() => {
+    if (!isBookingOpen) return undefined;
+
+    prevFocusRef.current = document.activeElement;
+    document.body.style.overflow = 'hidden';
+
+    // Focus the first focusable element or modal container
+    const timer = setTimeout(() => {
+      if (modalRef.current) {
+        const focusables = modalRef.current.querySelectorAll(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        );
+        if (focusables.length > 0) {
+          focusables[0].focus();
+        } else {
+          modalRef.current.focus();
+        }
+      }
+    }, 50);
+
     const handleKeyDown = (e) => {
-      if (e.key === 'Escape' && isBookingOpen) {
+      if (e.key === 'Escape') {
+        e.preventDefault();
         closeBooking();
+        return;
+      }
+      if (e.key === 'Tab' && modalRef.current) {
+        const focusables = Array.from(
+          modalRef.current.querySelectorAll(
+            'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+          )
+        ).filter((el) => !el.disabled && el.offsetParent !== null);
+
+        if (focusables.length === 0) return;
+
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+
+        if (e.shiftKey) {
+          if (document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          }
+        } else {
+          if (document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
       }
     };
-    if (isBookingOpen) {
-      document.body.style.overflow = 'hidden';
-      window.addEventListener('keydown', handleKeyDown);
-    } else {
-      document.body.style.overflow = '';
-    }
+
+    window.addEventListener('keydown', handleKeyDown);
+
     return () => {
+      clearTimeout(timer);
       document.body.style.overflow = '';
       window.removeEventListener('keydown', handleKeyDown);
+      if (prevFocusRef.current && typeof prevFocusRef.current.focus === 'function') {
+        prevFocusRef.current.focus();
+      }
     };
   }, [isBookingOpen, closeBooking]);
 
@@ -34,6 +82,7 @@ export default function BookingModal() {
         role="dialog"
         aria-labelledby="bookingModalLabel"
         aria-modal="true"
+        ref={modalRef}
         onClick={(e) => {
           if (e.target.classList.contains('modal')) {
             closeBooking();
@@ -65,4 +114,3 @@ export default function BookingModal() {
     </>
   );
 }
-

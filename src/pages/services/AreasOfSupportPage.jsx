@@ -5,6 +5,7 @@ import { areasOfSupport, services } from '../../data/servicesData';
 import PageHero from '../../components/ui/PageHero';
 import CtaBand from '../../components/ui/CtaBand';
 import Reveal from '../../components/common/Motion';
+import usePageMeta from '../../hooks/usePageMeta';
 
 const categories = [
   'All',
@@ -21,6 +22,12 @@ const categories = [
 export default function AreasOfSupportPage() {
   const { openBooking } = useModal();
   const [activeCategory, setActiveCategory] = useState('All');
+
+  usePageMeta({
+    title: 'Areas of Support & Developmental Needs | Child Learning Centre (CLC)',
+    description: 'Targeted support by challenge: speech delay, sensory meltdowns, attention and focus, motor development, and learning support across Mumbai, Navi Mumbai, Thane, Nagpur and Nashik.',
+    canonical: 'https://childlearningcentre.in/services/areas-of-support'
+  });
 
   const filteredItems =
     activeCategory === 'All'

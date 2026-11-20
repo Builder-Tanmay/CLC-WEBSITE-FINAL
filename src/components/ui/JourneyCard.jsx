@@ -5,23 +5,17 @@ export default function JourneyCard({ item }) {
   const { openBooking } = useModal();
 
   return (
-    <div
-      className="journey-card"
+    <button
+      type="button"
+      className="journey-card w-100 text-start"
       onClick={() => openBooking()}
-      role="button"
-      tabIndex={0}
-      onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          openBooking();
-        }
-      }}
-      style={{ cursor: 'pointer' }}
+      aria-label={`${item.title}: ${item.footer}`}
     >
-      <div className="journey-notch"></div>
+      <span className="journey-notch" aria-hidden="true"></span>
       <div>
         <div className="journey-card-top">
           <div className={`journey-icon-wrap journey-icon-wrap--${item.modifier}`}>
-            <i className={`bi ${item.icon}`}></i>
+            <i className={`bi ${item.icon}`} aria-hidden="true"></i>
           </div>
           <span className="journey-step-num">{item.step}</span>
         </div>
@@ -30,9 +24,8 @@ export default function JourneyCard({ item }) {
       </div>
       <div className="journey-card-footer">
         <span>{item.footer}</span>
-        <i className="bi bi-arrow-up-right"></i>
+        <i className="bi bi-arrow-up-right" aria-hidden="true"></i>
       </div>
-    </div>
+    </button>
   );
 }
-

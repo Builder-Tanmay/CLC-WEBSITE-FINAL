@@ -10,6 +10,8 @@ export default function TeamCard({ member }) {
           alt={member.title}
           loading="lazy"
           decoding="async"
+          width="400"
+          height="267"
         />
       </div>
       <div className="tile__body">

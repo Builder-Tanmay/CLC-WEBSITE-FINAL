@@ -5,9 +5,16 @@ import { services, areasOfSupport } from '../../data/servicesData';
 import PageHero from '../../components/ui/PageHero';
 import CtaBand from '../../components/ui/CtaBand';
 import Reveal from '../../components/common/Motion';
+import usePageMeta from '../../hooks/usePageMeta';
 
 export default function TherapyProgramsPage() {
   const { openBooking } = useModal();
+
+  usePageMeta({
+    title: 'Therapy Programmes & Clinical Treatments | Child Learning Centre (CLC)',
+    description: 'Evidence-based paediatric therapies at CLC: occupational therapy, speech therapy, sensory integration, and ADHD support across Mumbai, Navi Mumbai, Thane, Nagpur and Nashik.',
+    canonical: 'https://childlearningcentre.in/services/therapies'
+  });
 
   return (
     <main id="main">
