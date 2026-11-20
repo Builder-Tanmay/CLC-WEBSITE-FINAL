@@ -35,18 +35,16 @@ export default function CentresPage() {
             <div className="col-lg-7">
               <Reveal className="centres-hero__content">
                 <span className="centres-eyebrow">
-                  <i className="bi bi-geo-alt-fill"></i>
-                  Our Locations Across Maharashtra
+                  <i className="bi bi-geo-alt-fill me-1" aria-hidden="true"></i>
+                  Our locations across Maharashtra
                 </span>
 
                 <h1>
-                  Find the right <span>CLC Centre</span> near you
+                  Find the right <span>CLC centre</span> near you
                 </h1>
 
                 <p className="centres-hero__description">
-                  Every child deserves the right support in a welcoming
-                  environment. Explore our centres and find a convenient
-                  location for your child's developmental journey.
+                  Explore our clinics in Mumbai, Navi Mumbai, Thane, Nagpur and Nashik. Each centre offers dedicated therapy rooms and 40-minute guided sessions with an immediate parent debrief.
                 </p>
 
                 <div className="centres-highlights">
@@ -86,8 +84,7 @@ export default function CentresPage() {
                 />
 
                 <div className="centres-hero__image-note">
-                  <i className="bi bi-heart-fill"></i>
-                  Supporting every child's journey
+                  <span>Therapy rooms across Maharashtra</span>
                 </div>
               </Reveal>
             </div>
@@ -103,12 +100,11 @@ export default function CentresPage() {
           <Reveal className="centres-section-heading">
             <div>
               <span className="centres-section-kicker">
-                EXPLORE OUR LOCATIONS
+                Locations
               </span>
-              <h2>Our Centres</h2>
+              <h2>Our centres</h2>
               <p>
-                Find a convenient location and get directions to your
-                nearest Child Learning Centre.
+                Find a convenient clinic and get directions to your nearest Child Learning Centre.
               </p>
             </div>
           </Reveal>

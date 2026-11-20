@@ -31,8 +31,8 @@ const topics = [
     },
     {
         id: 'skills-guide',
-        icon: 'bi-stars',
-        title: 'Everyday Skills',
+        icon: 'bi-check2-circle',
+        title: 'Everyday skills',
         description:
             'Explore ways to encourage independence through dressing, eating, playing and daily routines.',
         tag: 'Daily life',
@@ -135,25 +135,22 @@ export default function ParentsCornerPage() {
                 <div className="container">
                     <div className="parents-hero__content">
                         <span className="parents-eyebrow">
-                            <i className="bi bi-heart-fill me-2"></i>
-                            A space for parents
+                            Guidance for families
                         </span>
 
                         <h1>
-                            Every little step is a
-                            <span> big part of growing.</span>
+                            Practical guidance for
+                            <span> everyday routines at home.</span>
                         </h1>
 
                         <p>
-                            Parenting comes with questions, discoveries and new experiences.
-                            Find simple guidance, helpful ideas and encouragement for your
-                            child’s developmental journey.
+                            Parenting comes with questions and new observations. Find concrete guidance, everyday home activities and clear answers from our therapy team.
                         </p>
 
                         <div className="parents-hero__actions">
                             <a href="#parent-topics" className="btn btn-clc">
-                                Explore Resources
-                                <i className="bi bi-arrow-down ms-2"></i>
+                                Explore guidance topics
+                                <i className="bi bi-arrow-down ms-2" aria-hidden="true"></i>
                             </a>
 
                             <button
@@ -161,14 +158,14 @@ export default function ParentsCornerPage() {
                                 className="btn btn-clc-outline"
                                 onClick={() => openBooking()}
                             >
-                                Talk to Our Team
-                                <i className="bi bi-arrow-up-right ms-2"></i>
+                                Book an evaluation
+                                <i className="bi bi-arrow-right ms-2" aria-hidden="true"></i>
                             </button>
                         </div>
 
                         <div className="parents-hero__note">
-                            <i className="bi bi-heart me-2"></i>
-                            Every child is unique. Every journey deserves understanding.
+                            <i className="bi bi-clock me-2" aria-hidden="true"></i>
+                            40-minute sessions with practical guidance for home and school.
                         </div>
                     </div>
 
@@ -178,11 +175,12 @@ export default function ParentsCornerPage() {
                             alt="Child participating in a learning activity with a therapist"
                             className="parents-hero__image"
                             loading="eager"
+                            width="540"
+                            height="380"
                         />
 
                         <div className="parents-hero__image-caption">
-                            <i className="bi bi-heart-fill"></i>
-                            <span>Learn. Connect. Grow.</span>
+                            <span>Clinical guidance for home</span>
                         </div>
                     </div>
                 </div>
@@ -205,14 +203,14 @@ export default function ParentsCornerPage() {
                             <div className="col-md-6 col-lg-3" key={topic.title}>
                                 <article className={`parent-topic-card topic-card-${index + 1}`}>
                                     <div className="parent-topic-card__icon">
-                                        <i className={`bi ${topic.icon}`}></i>
+                                        <i className={`bi ${topic.icon}`} aria-hidden="true"></i>
                                     </div>
                                     <span className="parent-topic-card__tag">{topic.tag}</span>
                                     <h3>{topic.title}</h3>
                                     <p>{topic.description}</p>
                                     <a href={`#${topic.id}`} className="parent-text-link">
                                         Explore guidance
-                                        <i className="bi bi-arrow-right ms-2"></i>
+                                        <i className="bi bi-arrow-right ms-2" aria-hidden="true"></i>
                                     </a>
                                 </article>
                             </div>
@@ -226,7 +224,7 @@ export default function ParentsCornerPage() {
             <Reveal as="section" className="section parents-topic-guides">
                 <div className="container">
                     <div className="parents-section-heading">
-                        <span className="parents-eyebrow">A little guidance goes a long way</span>
+                        <span className="parents-eyebrow">Practical steps</span>
                         <h2>Explore ways to support your child</h2>
                         <p>
                             Small everyday interactions can create meaningful opportunities
@@ -310,13 +308,11 @@ export default function ParentsCornerPage() {
                 <div className="container">
                     <div className="parents-reassurance__inner">
                         <div>
-                            <span className="parents-eyebrow">A note for every parent</span>
-                            <h2>You don't have to figure everything out alone.</h2>
+                            <span className="parents-eyebrow">Clear explanations</span>
+                            <h2>You do not have to figure everything out alone.</h2>
                         </div>
                         <p>
-                            Asking questions is a good place to start. Understanding your
-                            child’s needs is a journey, and the right support can make the
-                            next step feel clearer.
+                            Asking questions is a good place to start. Our clinical team explains evaluation findings in plain language and provides structured steps you can practise at home.
                         </p>
                     </div>
                 </div>
@@ -326,10 +322,10 @@ export default function ParentsCornerPage() {
             <Reveal as="section" id="parent-faqs" className="section parents-faq">
                 <div className="container">
                     <div className="parents-section-heading">
-                        <span className="parents-eyebrow">Here to help</span>
+                        <span className="parents-eyebrow">Frequently asked</span>
                         <h2>Questions parents often ask</h2>
                         <p>
-                            A few helpful starting points for some common questions.
+                            Clear starting points for common questions about evaluation, sessions and home practice.
                         </p>
                     </div>
 
@@ -338,7 +334,7 @@ export default function ParentsCornerPage() {
                             <details className="parents-faq__item" key={faq.question}>
                                 <summary>
                                     <span>{faq.question}</span>
-                                    <i className="bi bi-plus-lg"></i>
+                                    <i className="bi bi-plus-lg" aria-hidden="true"></i>
                                 </summary>
                                 <div className="parents-faq__answer">
                                     <p>{faq.answer}</p>
@@ -354,11 +350,10 @@ export default function ParentsCornerPage() {
                 <div className="container">
                     <div className="parents-cta__inner">
                         <div>
-                            <span className="parents-eyebrow">We're here for you</span>
+                            <span className="parents-eyebrow">Consultation</span>
                             <h2>Have questions about your child's development?</h2>
                             <p>
-                                Connect with the CLC team to discuss your concerns and
-                                understand the support options available.
+                                Connect with the CLC team to discuss your concerns, clinic hours and available appointment times.
                             </p>
                         </div>
 
@@ -367,8 +362,8 @@ export default function ParentsCornerPage() {
                             className="btn btn-light parents-cta__button"
                             onClick={() => openBooking()}
                         >
-                            Book a Consultation
-                            <i className="bi bi-arrow-right ms-2"></i>
+                            Book an evaluation
+                            <i className="bi bi-arrow-right ms-2" aria-hidden="true"></i>
                         </button>
                     </div>
                 </div>
