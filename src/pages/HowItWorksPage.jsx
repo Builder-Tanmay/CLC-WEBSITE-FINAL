@@ -75,7 +75,7 @@ export default function HowItWorksPage() {
         <div className="container">
           <SectionHead
             title="Personalised developmental support"
-            className="text-center"
+            className="text-center mx-auto"
           >
             Every child learns and develops differently. We work alongside families to provide structured therapy that builds on each child's strengths.
           </SectionHead>

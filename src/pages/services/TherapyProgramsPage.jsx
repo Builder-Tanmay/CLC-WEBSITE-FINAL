@@ -75,16 +75,14 @@ export default function TherapyProgramsPage() {
                       {/* Media Column */}
                       <div className={`col-lg-5 ${index % 2 === 1 ? 'order-lg-2' : ''}`}>
                         <div className="about-frame shadow-sm" style={{ aspectRatio: '16/11' }}>
-                          <Reveal variant="zoom">
-                            <img
-                              src={service.img}
-                              alt={service.title}
-                              className="w-100 h-100 object-fit-cover rounded-3"
-                              loading="lazy"
-                              width="560"
-                              height="385"
-                            />
-                          </Reveal>
+                          <img
+                            src={service.img}
+                            alt={service.title}
+                            className="w-100 h-100 object-fit-cover"
+                            loading="lazy"
+                            width="560"
+                            height="385"
+                          />
                         </div>
                       </div>
 

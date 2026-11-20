@@ -119,16 +119,14 @@ export default function AreasOfSupportPage() {
                         className="about-frame mb-3 rounded-3 overflow-hidden"
                         style={{ aspectRatio: '16/10' }}
                       >
-                        <Reveal variant="zoom">
-                          <img
-                            src={item.img}
-                            alt={item.title}
-                            className="w-100 h-100 object-fit-cover"
-                            loading="lazy"
-                            width="500"
-                            height="312"
-                          />
-                        </Reveal>
+                        <img
+                          src={item.img}
+                          alt={item.title}
+                          className="w-100 h-100 object-fit-cover"
+                          loading="lazy"
+                          width="500"
+                          height="312"
+                        />
                       </div>
 
                       {/* Category */}

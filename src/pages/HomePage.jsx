@@ -250,7 +250,7 @@ export default function HomePage() {
           </SectionHead>
           <div className="row g-4">
             {services.map((s, i) => (
-              <Reveal key={s.id} className="col-12 col-sm-6 col-lg-3" delay={i * 100}>
+              <Reveal key={s.id} className="col-12 col-sm-6 col-lg-3" delay={(i % 4) * 100}>
                 <ServiceCard service={s} />
               </Reveal>
             ))}

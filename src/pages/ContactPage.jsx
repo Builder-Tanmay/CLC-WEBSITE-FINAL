@@ -1,6 +1,7 @@
 import React from 'react';
 import BookingForm from '../components/forms/BookingForm';
 import Reveal from '../components/common/Motion';
+import PageHero from '../components/ui/PageHero';
 import usePageMeta from '../hooks/usePageMeta';
 
 export default function ContactPage() {
@@ -11,61 +12,28 @@ export default function ContactPage() {
   });
   return (
     <main id="main" className="contact-page">
-      {/* Hero Section */}
-      <Reveal as="section" className="contact-hero">
-        <div className="container">
-          <div className="row align-items-center g-4 g-lg-5">
-            <div className="col-lg-7">
-              <span className="contact-tag">
-                <i className="bi bi-geo-alt-fill me-1" aria-hidden="true"></i>
-                Clinics across Maharashtra
-              </span>
-
-              <h1>
-                Paediatric evaluations and family guidance
-              </h1>
-
-              <p className="contact-hero-text">
-                Every child develops on their own timeline. Connect with our clinical team to discuss your concerns, learn about our therapy programmes, and schedule an initial 40-minute evaluation.
-              </p>
-
-              <div className="contact-hero-actions">
-                <a href="#appointment" className="btn btn-clc btn-lg-clc">
-                  Book an evaluation
-                  <i className="bi bi-arrow-right ms-2" aria-hidden="true"></i>
-                </a>
-
-                <a href="tel:+919004460650" className="contact-call-link">
-                  <span className="call-icon">
-                    <i className="bi bi-telephone-fill" aria-hidden="true"></i>
-                  </span>
-                  <span>
-                    <small>Call our team</small>
-                    <strong>+91 90044 60650</strong>
-                  </span>
-                </a>
-              </div>
-            </div>
-
-            <div className="col-lg-5">
-              <div className="contact-hero-card">
-                <span className="hero-card-label">Session structure</span>
-
-                <h2>40 minutes + parent debrief</h2>
-
-                <p>
-                  Every session at CLC is 40 minutes long and ends with a parent debrief so you know exactly what was worked on and what to practise at home.
-                </p>
-
-                <div className="hero-card-footer">
-                  <i className="bi bi-check-circle-fill me-2" aria-hidden="true"></i>
-                  Monday to Saturday, 9:00 AM to 7:30 PM
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </Reveal>
+      {/* Page Hero */}
+      <PageHero
+        crumbs={[
+          { label: 'Home', to: '/' },
+          { label: 'Contact' }
+        ]}
+        eyebrow="Clinics across Maharashtra"
+        title="Paediatric evaluations and family guidance"
+        lead="Every child develops on their own timeline. Connect with our clinical team to discuss your concerns, learn about our therapy programmes, and schedule an initial 40-minute evaluation."
+        image="/assets/centre/centre-1.jpg"
+        actions={
+          <>
+            <a href="#appointment" className="btn btn-clc btn-lg-clc">
+              Book an evaluation
+              <i className="bi bi-arrow-right ms-2" aria-hidden="true"></i>
+            </a>
+            <a href="tel:+919004460650" className="btn btn-clc-outline btn-hero-outline btn-lg-clc">
+              <i className="bi bi-telephone-fill me-2" aria-hidden="true"></i>+91 90044 60650
+            </a>
+          </>
+        }
+      />
 
       {/* Quick Contact Section */}
       <Reveal as="section" className="contact-quick">

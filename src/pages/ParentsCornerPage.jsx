@@ -1,6 +1,9 @@
 import React from 'react';
 import { useModal } from '../context/ModalContext';
 import Reveal from '../components/common/Motion';
+import PageHero from '../components/ui/PageHero';
+import SectionHead from '../components/ui/SectionHead';
+import CtaBand from '../components/ui/CtaBand';
 import usePageMeta from '../hooks/usePageMeta';
 import '../styles/ParentsCornerPage.css';
 
@@ -137,73 +140,44 @@ export default function ParentsCornerPage() {
 
     return (
         <main id="main" className="parents-corner-page">
-            {/* Hero */}
-            <Reveal as="section" className="parents-hero">
-                <div className="container">
-                    <div className="parents-hero__content">
-                        <span className="parents-eyebrow">
-                            Guidance for families
-                        </span>
-
-                        <h1>
-                            Practical guidance for
-                            <span> everyday routines at home.</span>
-                        </h1>
-
-                        <p>
-                            Parenting comes with questions and new observations. Find concrete guidance, everyday home activities and clear answers from our therapy team.
-                        </p>
-
-                        <div className="parents-hero__actions">
-                            <a href="#parent-topics" className="btn btn-clc">
-                                Explore guidance topics
-                                <i className="bi bi-arrow-down ms-2" aria-hidden="true"></i>
-                            </a>
-
-                            <button
-                                type="button"
-                                className="btn btn-clc-outline"
-                                onClick={() => openBooking()}
-                            >
-                                Book an evaluation
-                                <i className="bi bi-arrow-right ms-2" aria-hidden="true"></i>
-                            </button>
-                        </div>
-
-                        <div className="parents-hero__note">
-                            <i className="bi bi-clock me-2" aria-hidden="true"></i>
-                            40-minute sessions with practical guidance for home and school.
-                        </div>
-                    </div>
-
-                    <div className="parents-hero__visual">
-                        <img
-                            src="/assets/services/service-7.jpg"
-                            alt="Child participating in a learning activity with a therapist"
-                            className="parents-hero__image"
-                            loading="eager"
-                            width="540"
-                            height="380"
-                        />
-
-                        <div className="parents-hero__image-caption">
-                            <span>Clinical guidance for home</span>
-                        </div>
-                    </div>
-                </div>
-            </Reveal>
+            {/* Page Hero */}
+            <PageHero
+                crumbs={[
+                    { label: 'Home', to: '/' },
+                    { label: "Parents' corner" }
+                ]}
+                eyebrow="Guidance for families"
+                title="Practical guidance for everyday routines at home"
+                lead="Parenting comes with questions and new observations. Find concrete guidance, everyday home activities and clear answers from our therapy team."
+                image="/assets/centre/centre-6.jpg"
+                actions={
+                    <>
+                        <a href="#parent-topics" className="btn btn-clc btn-lg-clc">
+                            Explore guidance topics
+                            <i className="bi bi-arrow-down ms-2" aria-hidden="true"></i>
+                        </a>
+                        <button
+                            type="button"
+                            className="btn btn-clc-outline btn-hero-outline btn-lg-clc"
+                            onClick={() => openBooking()}
+                        >
+                            Book an evaluation
+                            <i className="bi bi-arrow-right ms-2" aria-hidden="true"></i>
+                        </button>
+                    </>
+                }
+            />
 
             {/* Topics */}
             <Reveal as="section" id="parent-topics" className="section parents-topics">
                 <div className="container">
-                    <div className="parents-section-heading">
-                        <span className="parents-eyebrow">Explore and understand</span>
-                        <h2>What would you like to learn about?</h2>
-                        <p>
-                            Explore topics that can help you better understand your child
-                            and support their development in everyday life.
-                        </p>
-                    </div>
+                    <SectionHead
+                        title="What would you like to learn about?"
+                        className="text-center mx-auto"
+                    >
+                        Explore topics that can help you better understand your child
+                        and support their development in everyday life.
+                    </SectionHead>
 
                     <div className="row g-4">
                         {topics.map((topic, index) => (
@@ -230,14 +204,13 @@ export default function ParentsCornerPage() {
             {/* Topic Guides */}
             <Reveal as="section" className="section parents-topic-guides">
                 <div className="container">
-                    <div className="parents-section-heading">
-                        <span className="parents-eyebrow">Practical steps</span>
-                        <h2>Explore ways to support your child</h2>
-                        <p>
-                            Small everyday interactions can create meaningful opportunities
-                            for children to explore, communicate and learn.
-                        </p>
-                    </div>
+                    <SectionHead
+                        title="Explore ways to support your child"
+                        className="text-center mx-auto"
+                    >
+                        Small everyday interactions can create meaningful opportunities
+                        for children to explore, communicate and learn.
+                    </SectionHead>
 
                     <div className="parents-topic-guides__list">
                         {topicGuides.map((guide) => (
@@ -276,15 +249,14 @@ export default function ParentsCornerPage() {
                 className="section parents-guidance"
             >
                 <div className="container">
-                    <div className="parents-section-heading">
-                        <span className="parents-eyebrow">Little things that matter</span>
-                        <h2>Simple ways to support your child every day</h2>
-                        <p>
-                            Support does not always have to begin with big changes.
-                            Everyday interactions can create meaningful opportunities
-                            to connect and learn.
-                        </p>
-                    </div>
+                    <SectionHead
+                        title="Simple ways to support your child every day"
+                        className="text-center mx-auto"
+                    >
+                        Support does not always have to begin with big changes.
+                        Everyday interactions can create meaningful opportunities
+                        to connect and learn.
+                    </SectionHead>
 
                     <div className="row g-4">
                         {everydayGuidance.map((item) => (
@@ -328,13 +300,12 @@ export default function ParentsCornerPage() {
             {/* FAQs */}
             <Reveal as="section" id="parent-faqs" className="section parents-faq">
                 <div className="container">
-                    <div className="parents-section-heading">
-                        <span className="parents-eyebrow">Frequently asked</span>
-                        <h2>Questions parents often ask</h2>
-                        <p>
-                            Clear starting points for common questions about evaluation, sessions and home practice.
-                        </p>
-                    </div>
+                    <SectionHead
+                        title="Questions parents often ask"
+                        className="text-center mx-auto"
+                    >
+                        Clear starting points for common questions about evaluation, sessions and home practice.
+                    </SectionHead>
 
                     <div className="parents-faq__list">
                         {faqs.map((faq, index) => (
@@ -353,28 +324,13 @@ export default function ParentsCornerPage() {
             </Reveal>
 
             {/* Consultation CTA */}
-            <Reveal as="section" className="parents-cta">
-                <div className="container">
-                    <div className="parents-cta__inner">
-                        <div>
-                            <span className="parents-eyebrow">Consultation</span>
-                            <h2>Have questions about your child's development?</h2>
-                            <p>
-                                Connect with the CLC team to discuss your concerns, clinic hours and available appointment times.
-                            </p>
-                        </div>
-
-                        <button
-                            type="button"
-                            className="btn btn-light parents-cta__button"
-                            onClick={() => openBooking()}
-                        >
-                            Book an evaluation
-                            <i className="bi bi-arrow-right ms-2" aria-hidden="true"></i>
-                        </button>
-                    </div>
-                </div>
-            </Reveal>
+            <CtaBand
+                eyebrow="Consultation"
+                title="Have questions about your child's development?"
+                lead="Connect with the CLC team to discuss your concerns, clinic hours and available appointment times across Maharashtra."
+                actionLabel="Book an evaluation"
+                onAction={() => openBooking()}
+            />
         </main>
     );
 }

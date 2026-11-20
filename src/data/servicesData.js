@@ -82,6 +82,34 @@ export const services = [
       'Developmental milestones screening'
     ],
     whoIsItFor: 'Children with frequent emotional tantrums, separation anxiety, low self-esteem, or parents seeking practical guidance.'
+  },
+  {
+    id: 'autism',
+    title: 'Autism & Social Communication Support',
+    img: '/assets/services/service-8.jpg',
+    desc: 'Structured social communication pods, visual schedules and supportive peer interaction routines.',
+    concern: 'Autism / Social Pods',
+    benefits: [
+      'Social communication and peer interaction pods',
+      'Picture Exchange Communication (PECS) & visual cues',
+      'Sensory-friendly play and joint attention building',
+      'Transition routines and reducing repetitive distress'
+    ],
+    whoIsItFor: 'Children on the autism spectrum or those needing guided support with peer communication, eye contact, and social connection.'
+  },
+  {
+    id: 'early-intervention',
+    title: 'Multidisciplinary Early Intervention',
+    img: '/assets/services/service-7.jpg',
+    desc: 'Timely developmental stimulation for infants and toddlers during the golden window of early neuroplasticity.',
+    concern: 'Early Intervention',
+    benefits: [
+      'Motor, speech and cognitive milestone screening',
+      'Neurodevelopmental play stimulation routines',
+      'Postural tone and early mobility guidance',
+      'Hands-on parent coaching for daily stimulation at home'
+    ],
+    whoIsItFor: 'Toddlers and infants (0–5 years) showing delayed crawling, walking, babbling, social smiles or sensory adaptation hurdles.'
   }
 ];
 
@@ -155,8 +183,8 @@ export const areasOfSupport = [
       'Intense special interests with heightened attention to detail'
     ],
     howWeHelp: 'Combined speech-OT social pods, picture exchange & non-verbal support, peer play facilitation, and structured visual schedules.',
-    therapyMatched: 'Occupational & Speech Therapy',
-    concern: 'Occupational / Sensory'
+    therapyMatched: 'Autism & Social Communication Support',
+    concern: 'Autism / Social Pods'
   },
   {
     id: 'handwriting-fine-motor',
@@ -228,7 +256,7 @@ export const areasOfSupport = [
     ],
     howWeHelp: 'Comprehensive standardized screening (motor, cognitive, speech), neurodevelopmental play stimulation, and empowering parent training.',
     therapyMatched: 'Multidisciplinary Early Intervention',
-    concern: 'General Screening'
+    concern: 'Early Intervention'
   }
 ];
 
@@ -237,6 +265,8 @@ export const CONCERNS = [
   { value: 'Occupational / Sensory', label: 'Sensory and motor skills' },
   { value: 'ADHD / Attention', label: 'ADHD and attention' },
   { value: 'Special Education', label: 'Reading and learning' },
+  { value: 'Autism / Social Pods', label: 'Autism and social communication' },
+  { value: 'Early Intervention', label: 'Early intervention (0–5 yrs)' },
   { value: 'General Screening', label: 'Not sure yet' }
 ];
 

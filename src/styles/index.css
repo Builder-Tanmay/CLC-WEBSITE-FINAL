@@ -269,17 +269,29 @@ a:hover { color: var(--clc-red-dark); }
 .section { padding: clamp(3.2rem, 6vw, 5.2rem) 0; overflow-x: clip; }
 .section--white { background: #fff; }
 .section-head { max-width: 41rem; margin-bottom: clamp(1.8rem, 3vw, 2.8rem); }
+.section-head.text-center,
+.section-head.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
 .section-head h2 { font-size: clamp(1.8rem, 1.2rem + 1.9vw, 2.6rem); margin-bottom: 0.2rem; }
 .section-head h2::after {
   content: ''; display: block; width: 56px; height: 3px; margin: 0.85rem 0 0.9rem;
   background: var(--clc-red); border-radius: 3px; transition: width 0.9s var(--ease) 0.3s;
 }
+.section-head.text-center h2::after,
+.section-head.mx-auto h2::after {
+  margin-left: auto;
+  margin-right: auto;
+}
 .section-head[data-reveal]:not(.is-visible) h2::after { width: 0; }
 .section-head p { color: var(--clc-muted); margin: 0; font-size: 1.08rem; }
 
 /* About */
-.about-frame { border-radius: 16px; overflow: hidden; aspect-ratio: 4 / 3; background: var(--clc-line); }
+.about-frame { border-radius: 16px; overflow: hidden; aspect-ratio: 4 / 3; background: var(--clc-line); position: relative; display: block; }
 .about-frame img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 1.8s var(--ease); }
+.about-frame > div { width: 100%; height: 100%; }
 .about-frame[data-reveal]:not(.is-visible) img { transform: scale(1.12); }
 .about-copy h2 { font-size: clamp(1.8rem, 1.2rem + 1.9vw, 2.6rem); margin-bottom: 1rem; }
 .about-copy p { color: var(--clc-muted); }
@@ -857,8 +869,21 @@ html.js .steps li.is-active::before { animation: pop 0.5s var(--ease) both; }
   font-size: 23px;
 }
 
-/* Preserve the existing .form-card styling.
-   Do not override its background, padding or border. */
+/* ---------- Form Card ---------- */
+.form-card {
+  background: #fff;
+  border: 1px solid var(--clc-line);
+  border-radius: 20px;
+  padding: clamp(1.8rem, 3.5vw, 2.75rem);
+  box-shadow: 0 16px 36px -12px rgba(15, 23, 42, 0.08);
+}
+.form-card h3 {
+  font-family: var(--font-head);
+  font-size: 1.55rem;
+  margin-bottom: 0.4rem;
+  color: var(--clc-navy);
+}
+
 
 /* LOCATION SECTION */
 
@@ -1008,35 +1033,35 @@ html.js .steps li.is-active::before { animation: pop 0.5s var(--ease) both; }
    CLC BOOKING FORM - CONTACT PAGE
 ========================================= */
 
-.contact-page .enquiry-wrap {
+.enquiry-wrap {
   width: 100%;
 }
 
-.contact-page .form-lead {
+.form-lead {
   color: var(--clc-muted);
   font-size: 0.9rem;
   margin-bottom: 1.8rem;
 }
 
-.contact-page .enquiry {
+.enquiry {
   width: 100%;
 }
 
-.contact-page .enquiry__grid {
+.enquiry__grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.35rem 1.25rem;
 }
 
-.contact-page .field {
+.field {
   min-width: 0;
   margin: 0;
   padding: 0;
   border: 0;
 }
 
-.contact-page .field label,
-.contact-page .field legend {
+.field label,
+.field legend {
   display: block;
   width: 100%;
   margin-bottom: 0.55rem;
@@ -1045,15 +1070,15 @@ html.js .steps li.is-active::before { animation: pop 0.5s var(--ease) both; }
   font-weight: 800;
 }
 
-.contact-page .field .opt {
+.field .opt {
   color: var(--clc-muted);
   font-size: 0.78rem;
   font-weight: 500;
 }
 
-.contact-page .field input:not([type="checkbox"]),
-.contact-page .field select,
-.contact-page .field textarea {
+.field input:not([type="checkbox"]),
+.field select,
+.field textarea {
   display: block;
   width: 100%;
   min-height: 51px;
@@ -1068,33 +1093,33 @@ html.js .steps li.is-active::before { animation: pop 0.5s var(--ease) both; }
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.contact-page .field input::placeholder,
-.contact-page .field textarea::placeholder {
+.field input::placeholder,
+.field textarea::placeholder {
   color: #9299a7;
   opacity: 1;
 }
 
-.contact-page .field input:focus,
-.contact-page .field select:focus,
-.contact-page .field textarea:focus {
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
   border-color: var(--clc-focus);
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
 }
 
-.contact-page .field select {
+.field select {
   cursor: pointer;
 }
 
-.contact-page .field textarea {
+.field textarea {
   min-height: 125px;
   resize: vertical;
 }
 
-.contact-page .field--full {
+.field--full {
   grid-column: 1 / -1;
 }
 
-.contact-page .phone-wrap {
+.phone-wrap {
   display: flex;
   align-items: center;
   min-height: 51px;
@@ -1105,19 +1130,19 @@ html.js .steps li.is-active::before { animation: pop 0.5s var(--ease) both; }
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.contact-page .phone-wrap:focus-within {
+.phone-wrap:focus-within {
   border-color: var(--clc-focus);
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
 }
 
-.contact-page .phone-wrap .prefix {
+.phone-wrap .prefix {
   padding: 0 0.9rem;
   border-right: 1px solid var(--clc-line);
   color: var(--clc-muted);
   font-weight: 800;
 }
 
-.contact-page .phone-wrap input {
+.phone-wrap input {
   flex: 1;
   min-width: 0;
   border: 0 !important;
@@ -1125,21 +1150,21 @@ html.js .steps li.is-active::before { animation: pop 0.5s var(--ease) both; }
   box-shadow: none !important;
 }
 
-.contact-page .field__count {
+.field__count {
   float: right;
   color: var(--clc-muted);
   font-size: 0.78rem;
   font-weight: 500;
 }
 
-.contact-page .chips {
+.chips {
   display: flex;
   flex-wrap: wrap;
   gap: 0.65rem;
   margin-top: 0.75rem;
 }
 
-.contact-page .chip {
+.chip {
   position: relative;
   display: inline-flex !important;
   align-items: center;
@@ -1148,14 +1173,14 @@ html.js .steps li.is-active::before { animation: pop 0.5s var(--ease) both; }
   cursor: pointer;
 }
 
-.contact-page .chip input {
+.chip input {
   position: absolute;
   width: 1px;
   height: 1px;
   opacity: 0;
 }
 
-.contact-page .chip span {
+.chip span {
   display: inline-flex;
   align-items: center;
   min-height: 39px;
@@ -1169,45 +1194,45 @@ html.js .steps li.is-active::before { animation: pop 0.5s var(--ease) both; }
   transition: all 0.2s ease;
 }
 
-.contact-page .chip:hover span {
+.chip:hover span {
   border-color: var(--clc-red);
   color: var(--clc-red);
 }
 
-.contact-page .chip input:checked + span {
+.chip input:checked + span {
   border-color: var(--clc-red);
   background: var(--clc-red-tint);
   color: var(--clc-red-dark);
 }
 
-.contact-page .chip input:focus-visible + span {
+.chip input:focus-visible + span {
   outline: 3px solid rgba(37, 99, 235, 0.2);
   outline-offset: 2px;
 }
 
-.contact-page .field__err {
+.field__err {
   margin: 0.45rem 0 0;
   color: #c62828;
   font-size: 0.8rem;
   font-weight: 700;
 }
 
-.contact-page .field.has-error input:not([type="checkbox"]),
-.contact-page .field.has-error select,
-.contact-page .field.has-error .phone-wrap {
+.field.has-error input:not([type="checkbox"]),
+.field.has-error select,
+.field.has-error .phone-wrap {
   border-color: #d32f2f;
 }
 
-.contact-page .field.is-valid input:not([type="checkbox"]),
-.contact-page .field.is-valid select {
+.field.is-valid input:not([type="checkbox"]),
+.field.is-valid select {
   border-color: var(--clc-ok);
 }
 
-.contact-page .enquiry__submit {
+.enquiry__submit {
   margin-top: 1.8rem;
 }
 
-.contact-page .enquiry__submit .btn {
+.enquiry__submit .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1218,28 +1243,28 @@ html.js .steps li.is-active::before { animation: pop 0.5s var(--ease) both; }
   font-weight: 800;
 }
 
-.contact-page .enquiry__submit .btn i {
+.enquiry__submit .btn i {
   font-size: 1.1rem;
 }
 
-.contact-page .enquiry__note {
+.enquiry__note {
   margin: 0.85rem 0 0;
   color: var(--clc-muted);
   font-size: 0.8rem;
   line-height: 1.6;
 }
 
-.contact-page .enquiry__submit .is-loading {
+.enquiry__submit .is-loading {
   opacity: 0.75;
   pointer-events: none;
 }
 
-.contact-page .enquiry-done {
+.enquiry-done {
   padding: 2.5rem 1rem;
   text-align: center;
 }
 
-.contact-page .enquiry-done svg {
+.enquiry-done svg {
   width: 76px;
   height: 76px;
   margin-bottom: 1.2rem;
@@ -1250,28 +1275,28 @@ html.js .steps li.is-active::before { animation: pop 0.5s var(--ease) both; }
   stroke-linejoin: round;
 }
 
-.contact-page .enquiry-done h3 {
+.enquiry-done h3 {
   color: var(--clc-navy);
   font-family: var(--font-head);
   font-size: 1.8rem;
   font-weight: 700;
 }
 
-.contact-page .enquiry-done p {
+.enquiry-done p {
   max-width: 520px;
   margin: 0.8rem auto 1.4rem;
   color: var(--clc-muted);
   line-height: 1.7;
 }
 
-.contact-page .enquiry-done .btns {
+.enquiry-done .btns {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.8rem;
 }
 
-.contact-page .enquiry-done .link-btn {
+.enquiry-done .link-btn {
   display: block;
   margin: 1.2rem auto 0;
   padding: 0;
@@ -1286,24 +1311,24 @@ html.js .steps li.is-active::before { animation: pop 0.5s var(--ease) both; }
 /* Mobile layout */
 
 @media (max-width: 575.98px) {
-  .contact-page .enquiry__grid {
+  .enquiry__grid {
     grid-template-columns: 1fr;
     gap: 1.15rem;
   }
 
-  .contact-page .field--full {
+  .field--full {
     grid-column: auto;
   }
 
-  .contact-page .enquiry__submit .btn {
+  .enquiry__submit .btn {
     width: 100%;
   }
 
-  .contact-page .enquiry-done .btns {
+  .enquiry-done .btns {
     flex-direction: column;
   }
 
-  .contact-page .enquiry-done .btns .btn {
+  .enquiry-done .btns .btn {
     width: 100%;
   }
 }
