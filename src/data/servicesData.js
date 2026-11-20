@@ -217,7 +217,7 @@ export const areasOfSupport = [
     title: 'Early Developmental Milestone Delays',
     subtitle: 'Early intervention screening for toddlers and infants (0–5 years)',
     category: 'Early Intervention',
-    icon: 'bi-flower1',
+    icon: 'bi-activity',
     img: '/assets/support/activity-8.jpg',
     overview: 'The first five years are the golden window of neuroplasticity. Timely developmental screening ensures that subtle motor, speech, or social delays are addressed early for maximum lifelong impact.',
     signs: [

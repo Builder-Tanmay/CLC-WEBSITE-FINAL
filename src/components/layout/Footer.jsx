@@ -25,13 +25,13 @@ export default function Footer() {
             <h2>Explore</h2>
             <ul className="footer-links">
               <li>
-                <Link to="/about">About Us</Link>
+                <Link to="/about">About us</Link>
               </li>
               <li>
-                <Link to="/about#team">Our Team</Link>
+                <Link to="/about#team">Our team</Link>
               </li>
               <li>
-                <Link to="/how-it-works">How It Works</Link>
+                <Link to="/how-it-works">How it works</Link>
               </li>
               <li>
                 <Link to="/centres">Centres</Link>
@@ -46,11 +46,11 @@ export default function Footer() {
           </div>
 
           <div className="col-6 col-lg-3">
-            <h2>Services &amp; Support</h2>
+            <h2>Services &amp; support</h2>
             <ul className="footer-links">
               <li>
                 <Link to="/services/therapies" className="fw-bold text-dark">
-                  All Therapy Programs
+                  All therapy programs
                 </Link>
               </li>
               <li>
@@ -68,14 +68,14 @@ export default function Footer() {
               <li className="mt-2 pt-2 border-top">
                 <Link to="/services/areas-of-support" className="fw-bold text-danger">
                   <i className="bi bi-arrow-right-circle me-1"></i>
-                  Areas of Support
+                  Areas of support
                 </Link>
               </li>
               <li>
-                <Link to="/services/areas-of-support#speech-language-delay">Speech Delays</Link>
+                <Link to="/services/areas-of-support#speech-language-delay">Speech delays</Link>
               </li>
               <li>
-                <Link to="/services/areas-of-support#sensory-processing-meltdowns">Sensory Meltdowns</Link>
+                <Link to="/services/areas-of-support#sensory-processing-meltdowns">Sensory meltdowns</Link>
               </li>
             </ul>
           </div>

@@ -19,16 +19,16 @@ export const journeySteps = [
     step: '03',
     title: 'Support',
     desc: 'We create a supportive environment where children can practise skills and work towards their goals.',
-    footer: 'Small steps, meaningful progress',
+    footer: 'Consistent practice, measurable progress',
     icon: 'bi-people',
     modifier: 'amber'
   },
   {
     step: '04',
-    title: 'Grow Together',
+    title: 'Grow together',
     desc: 'We encourage parent involvement to help families support their child’s development beyond the centre.',
     footer: 'Growing together as a family',
-    icon: 'bi-stars',
+    icon: 'bi-graph-up-arrow',
     modifier: 'indigo'
   }
 ];

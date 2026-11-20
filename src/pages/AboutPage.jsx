@@ -54,7 +54,7 @@ export default function AboutPage() {
         ]}
         eyebrow="About Child Learning Centre"
         title="Care that combines clinical skill with patience"
-        lead="Founded in 2013, CLC has helped over 6,000 children across Maharashtra unlock their natural developmental strengths in a welcoming, family-focused clinic setting."
+        lead="Founded in 2013, CLC has helped over 6,000 children across Maharashtra build developmental skills and confidence in a welcoming, family-focused clinic setting."
         image="/assets/centre/centre-2.jpg"
         actions={
           <>

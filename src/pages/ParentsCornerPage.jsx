@@ -84,14 +84,14 @@ const everydayGuidance = [
         number: '01',
         title: 'Make time for connection',
         description:
-            'Set aside a little uninterrupted time to play, talk or read together. Small moments of connection matter.',
-        icon: 'bi-heart',
+            'Set aside a little uninterrupted time to play, talk or read together. Daily moments of shared attention build trust.',
+        icon: 'bi-chat-dots',
     },
     {
         number: '02',
-        title: 'Celebrate small steps',
+        title: 'Notice steady progress',
         description:
-            'Notice your child’s efforts and progress. Every child develops at their own pace, and small achievements count.',
+            'Notice your child’s everyday effort and progress. Each child learns at their own pace with consistent clinic and home practice.',
         icon: 'bi-award',
     },
     {
@@ -122,7 +122,7 @@ const faqs = [
     {
         question: 'Can parents be involved in the therapy process?',
         answer:
-            'Yes. Parent involvement can be an important part of a child’s developmental journey. Sharing observations, discussing goals and practising suggested activities at home can help support consistency.',
+            'Yes. Parent involvement is an important part of a child’s developmental progress. Sharing observations, discussing goals and practising suggested activities at home helps support consistency.',
     },
 ];
 
